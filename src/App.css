@@ -3,24 +3,27 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 300px;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App-logo-left {
+  margin-right: 20px;
 }
 
+.App-logo-right {
+  margin-left: 20px;
+}
+
+
 .App-header {
-  background-color: #282c34;
+  background: linear-gradient(135deg, #8d9492 0%, #c62828 100%);
+  /* background-color: #c62828; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: flex-start;
   color: white;
 }
 
@@ -28,11 +31,25 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@font-face {
+  font-family: 'DirtyBrush';
+  src: url('./assets/fonts/DirtyBrush.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.App-title {
+  font-family: 'DirtyBrush', sans-serif;
+  font-size: 200px;
+  font-weight: normal;
+  margin-top: 50px;
+}
+
+.Title-row {
+  display: flex;
+  margin-top: 60px;
+}
+
+.Answer-row {
+
 }
