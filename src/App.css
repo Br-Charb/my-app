@@ -1,10 +1,17 @@
 .App {
   text-align: center;
+  background: linear-gradient(25deg, #8d9492 0%, #c62828 100%);
+  /* background-color: #c62828; */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  color: white;
 }
 
 .App-logo {
   height: 300px;
-  pointer-events: none;
 }
 
 .App-logo-left {
@@ -13,18 +20,6 @@
 
 .App-logo-right {
   margin-left: 20px;
-}
-
-
-.App-header {
-  background: linear-gradient(135deg, #8d9492 0%, #c62828 100%);
-  /* background-color: #c62828; */
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  color: white;
 }
 
 .App-link {
@@ -38,6 +33,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'PersonaAura';
+  src: url('./assets/fonts/PersonaAura.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .App-title {
   font-family: 'DirtyBrush', sans-serif;
   font-size: 200px;
@@ -46,10 +48,62 @@
 }
 
 .Title-row {
+  padding: 0px;
   display: flex;
   margin-top: 60px;
+  margin-bottom: 0px;
+  /* outline:1px solid black; */
+  height: 275px;
 }
 
-.Answer-row {
+.Guess-prompt {
+  width: 750px;
+  height: 10px;
+  border-radius: 20px;
+  font-size: 30px;
+  padding: 15px;
+  border: 2px solid #ccc;
+}
 
+.Headings {
+  display: flex;
+  font-size: 20px;
+  height: 40px;
+  /* outline:1px solid black; */
+}
+
+.R1-heading {
+  width: 60px;
+  justify-content: center;
+  display: flex;
+}
+
+.Divider-line {
+  margin-top: -25px;
+  margin-bottom:-25px;
+  /* margin-left: 45px; */
+  font-size: 40px;
+  /* outline:1px solid black; */
+}
+
+.Responses {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 250px repeat(7, 150px);
+  font-size: 25px;
+  height: fit-content;
+  font-family: 'PersonaAura', sans-serif;
+  /* outline:1px solid black; */
+  margin: 0px;
+}
+
+.R1-response {
+  width: 60px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.Flag-image {
+  height: 50px;
 }
