@@ -5,7 +5,8 @@ export const Fighter = ({ fighter }) => {
       name, 
       flag, 
       weightClass, 
-      age, height, 
+      age, 
+      height, 
       wingspan, 
       rank, 
       lastFight
@@ -13,10 +14,10 @@ export const Fighter = ({ fighter }) => {
     return (
       <div className="Response-rows Response-body-rows">
         <div className='R1-response Answer-wrong'>
-          <img src={`/images/${(name.toLowerCase()).split(" ").join("-")}.png`} className="Fighter-image" alt={name} />
+          <img src={`/images/fighterImages/${name.split(" ").join("")}.png`} className="Fighter-image" alt={name} />
           <p className="Fighter-name-text"> {name} </p>
         </div>
-        <p className="R2-response Nationality-weight-lastfight-box Answer-correct"><img src={`/images/flag-of-${flag}.png`} className="Flag-image" alt="Russian Flag" /></p>
+        <p className="R2-response Nationality-weight-lastfight-box Answer-correct"><img src={`/images/flags/${flag}.png`} className="Flag-image" alt={`${flag} Flag`} /></p>
         <p className="R2-response Nationality-weight-lastfight-box Answer-wrong">{weightClass}</p>
         <p className="R2-response Age-height-wingspan-peakrank-box Answer-close">{age}</p>
         <p className="R2-response Age-height-wingspan-peakrank-box Answer-close">{height}</p>

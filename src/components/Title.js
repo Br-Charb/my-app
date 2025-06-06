@@ -3,11 +3,9 @@ import React from 'react';
 export const Title = () => {
     return (
         <header className="Title-row">
-            <img src='/images/octagon_left.png' className="App-logo App-logo-left" alt="octagon_left" />
+            <img src='/images/general/OctagonLeft.png' className="App-logo App-logo-left" alt="octagon-left" />
             <h1 className='App-title'>OCTADLE</h1>
-            <img src="/images/octagon_right.png" className="App-logo App-logo-right" alt="octagon_right" />
+            <img src="/images/general/OctagonRight.png" className="App-logo App-logo-right" alt="octagon-right" />
         </header>
     );
 }
-
-export default Title;
