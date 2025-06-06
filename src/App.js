@@ -11,7 +11,7 @@ function App() {
       <div>
         <input type="text" className="Guess-prompt" placeholder="Guess"/>
       </div>
-      <div className="Responses">
+      <div className="Response-rows Headings">
         <p className="R1-heading">Name</p>
         <p className="R2-heading">Nationality</p>
         <p className="R2-heading">Weight</p>
@@ -22,37 +22,59 @@ function App() {
         <p className="R2-heading">Last Fight</p>
       </div>
       <div>
-        <p className='Divider-line'>---------------------------------------------------------------------------------</p>
+        <hr className='Divider-line'/>
       </div>
-      <div className="Responses">
-        <p className="R1-response">Khabib <br/>Nurmagomedov</p>
-        <p className="R2-response"><img src='/images/flag_of_russia.png' className="Flag-image" alt="Russian Flag" /></p>
-        <p className="R2-response">Light weight</p>
-        <p className="R2-response">36</p>
-        <p className="R2-response">5' 10"</p>
-        <p className="R2-response">70"</p>
-        <p className="R2-response">Champ</p>
-        <p className="R2-response">UFC 254</p>
+      <div className='Attempted-rows'>
+        <div className="Response-rows Response-body-rows">
+          <div className='R1-response Answer-wrong'>
+            <img src='/images/khabib-nurmagomedov.png' className="Fighter-image" alt="khabib-nurmagomedov" />
+            <p className="Fighter-name-text"> Khabib Nurmagomedov</p>
+          </div>
+          <p className="R2-response Nationality-weight-lastfight-box Answer-correct"><img src='/images/flag_of_russia.png' className="Flag-image" alt="Russian Flag" /></p>
+          <p className="R2-response Nationality-weight-lastfight-box Answer-wrong">Light weight</p>
+          <p className="R2-response Age-height-wingspan-peakrank-box Answer-close">36</p>
+          <p className="R2-response Age-height-wingspan-peakrank-box Answer-close">5' 10"</p>
+          <p className="R2-response Age-height-wingspan-peakrank-box Answer-close">70"</p>
+          <p className="R2-response Age-height-wingspan-peakrank-box Answer-wrong">Champ</p>
+          <p className="R2-response Nationality-weight-lastfight-box Answer-wrong">UFC 254</p>
+        </div>
+        <div className="Response-rows Response-body-rows">
+          <div  className='R1-response Answer-wrong'>
+            <img src='/images/charles-oliveira.png' className="Fighter-image" alt="charles-oliveira" />
+            <p className="Fighter-name-text">Charles Oliveira</p>
+          </div>
+          <p className="R2-response Nationality-weight-lastfight-box Answer-wrong"><img src='/images/flag_of_brazil.png' className="Flag-image" alt="Brazillian Flag" /></p>
+          <p className="R2-response Nationality-weight-lastfight-box Answer-wrong">Light weight</p>
+          <p className="R2-response Age-height-wingspan-peakrank-box Answer-close">35</p>
+          <p className="R2-response Age-height-wingspan-peakrank-box Answer-close">5' 10"</p>
+          <p className="R2-response Age-height-wingspan-peakrank-box Answer-close">74"</p>
+          <p className="R2-response Age-height-wingspan-peakrank-box Answer-wrong">Champ</p>
+          <p className="R2-response Nationality-weight-lastfight-box Answer-wrong">UFC 309</p>
+        </div>
+        <div className="Response-rows Response-body-rows">
+          <div  className='R1-response Answer-correct'>
+            <img src='/images/zabit-magomedsharipov.png' className="Fighter-image" alt="zabit-magomedsharipov" />
+            <p className="Fighter-name-text"> Zabit Magomedsharipov</p>
+          </div>
+          <p className="R2-response Nationality-weight-lastfight-box Answer-correct"><img src='/images/flag_of_russia.png' className="Flag-image" alt="Russian Flag" /></p>
+          <p className="R2-response Nationality-weight-lastfight-box Answer-correct">Feather Weight</p>
+          <p className="R2-response Age-height-wingspan-peakrank-box Answer-correct">34</p>
+          <p className="R2-response Age-height-wingspan-peakrank-box Answer-correct">6' 1"</p>
+          <p className="R2-response Age-height-wingspan-peakrank-box Answer-correct">73"</p>
+          <p className="R2-response Age-height-wingspan-peakrank-box Answer-correct">#3</p>
+          <p className="R2-response Nationality-weight-lastfight-box Answer-correct">Zabit vs Kattar</p>
+        </div>
       </div>
-      <div className="Responses">
-        <p className="R1-response">Charles <br/>Oliveira</p>
-        <p className="R2-response"><img src='/images/flag_of_brazil.png' className="Flag-image" alt="Brazillian Flag" /></p>
-        <p className="R2-response">Light weight</p>
-        <p className="R2-response">35</p>
-        <p className="R2-response">5' 10"</p>
-        <p className="R2-response">74"</p>
-        <p className="R2-response">Champ</p>
-        <p className="R2-response">UFC 309</p>
-      </div>
-      <div className="Responses">
-        <p className="R1-response">Zabit<br/>Magomedsharipov</p>
-        <p className="R2-response"><img src='/images/flag_of_russia.png' className="Flag-image" alt="Russian Flag" /></p>
-        <p className="R2-response">Feather Weight</p>
-        <p className="R2-response">34</p>
-        <p className="R2-response">6' 1"</p>
-        <p className="R2-response">73"</p>
-        <p className="R2-response">#3</p>
-        <p className="R2-response">Zabit vs Kattar</p>
+      <div className='Unattempted-rows'>
+        <div className='Unattempted-guess'>
+          <p>Guess 4</p>
+        </div>
+        <div className='Unattempted-guess'>
+          <p>Guess 5</p>
+        </div>
+        <div className='Unattempted-guess'>
+          <p>Guess 6</p>
+        </div>
       </div>
     </div>
   );

@@ -8,6 +8,7 @@
   align-items: center;
   justify-content: flex-start;
   color: white;
+  padding-bottom: 50px;
 }
 
 .App-logo {
@@ -63,13 +64,13 @@
   font-size: 30px;
   padding: 15px;
   border: 2px solid #ccc;
+  margin-bottom: 20px;
 }
 
 .Headings {
-  display: flex;
-  font-size: 20px;
-  height: 40px;
-  /* outline:1px solid black; */
+  margin-bottom: -40px;
+  margin-top: -20px;
+  font-size: 30px;
 }
 
 .R1-heading {
@@ -79,31 +80,124 @@
 }
 
 .Divider-line {
-  margin-top: -25px;
-  margin-bottom:-25px;
-  /* margin-left: 45px; */
-  font-size: 40px;
+  border: none;
+  height: 3px;
+  background: repeating-linear-gradient(90deg, white,white 10px,transparent 5px,transparent 15px);
+  width: 1600px;
+}
+
+.Response-rows {
+  display: grid;
+  gap: 10px;
+  place-items: center;
+  grid-template-columns: 300px 200px 200px repeat(4, 150px) 200px;
+  height: 140px;
+  font-family: 'PersonaAura', sans-serif;
+  /* margin-bottom: 10px; */
   /* outline:1px solid black; */
 }
 
-.Responses {
-  display: grid;
-  place-items: center;
-  grid-template-columns: 250px repeat(7, 150px);
-  font-size: 25px;
-  height: fit-content;
-  font-family: 'PersonaAura', sans-serif;
-  /* outline:1px solid black; */
-  margin: 0px;
+.Response-body-rows {
+  margin-bottom: 10px;
 }
+
+
 
 .R1-response {
-  width: 60px;
-  justify-content: center;
+  width: 300px;
+  height: 140px;
+  /* outline: 1px solid black; */
+  border-radius: 20px;
+}
+
+.R2-response {
+  font-size: 30px;
+  height: 140px;
   display: flex;
   align-items: center;
+  text-align: center;
+  justify-content: center;
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding: 10px;
+
 }
 
 .Flag-image {
-  height: 50px;
+  height: 70px;
+}
+
+.Fighter-image {
+  margin-top: 12px;
+  height: 90px;
+  /* outline: 1px solid black; */
+  margin-bottom: -25px;
+}
+
+.Unattempted-guess {
+  font-size: 50px;
+  font-family: 'PersonaAura', sans-serif;
+  outline: 3px solid black;
+  background-color: grey;
+  align-items: center;
+  height: 140px;
+  width: 1570px;
+  justify-content: center;
+  display: flex;
+  margin: 10px;
+  border-radius: 20px;
+
+  text-shadow:
+    -3px -3px 0 black,
+    3px -3px 0 black,
+    -3px 3px 0 black,
+    3px 3px 0 black;
+
+}
+
+.Attempted-rows {
+  margin-top: -20px;
+}
+
+.Unattempted-rows {
+  margin-top: 20px;
+}
+
+.Fighter-name-text {
+  font-size: 22px;
+}
+
+.Nationality-weight-lastfight-box {
+  width: 200px;
+}
+
+.Age-height-wingspan-peakrank-box {
+  width: 150px;
+}
+
+.Answer-close {
+  box-shadow: 
+    /* inset 0 0 0 2px black, */
+    inset 0 0 0 10px yellow,
+    0 0 0 3px black;
+  outline: 3px solid black;
+  outline-offset: -12px;
+}
+
+.Answer-correct {
+  box-shadow: 
+    /* inset 0 0 0 2px black, */
+    inset 0 0 0 10px green,
+    0 0 0 3px black;
+  outline: 3px solid black;
+  outline-offset: -12px;
+}
+
+.Answer-wrong {
+  box-shadow: 
+    /* inset 0 0 0 2px black, */
+    inset 0 0 0 10px red,
+    0 0 0 3px black;
+  outline: 3px solid black;
+  outline-offset: -12px;
 }
