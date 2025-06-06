@@ -1,16 +1,12 @@
 import './App.css';
 import { Title } from './components/Title'
 import { Fighter } from './components/Fighter';
+import { UnattemptedGuess } from './components/UnattemptedGuess';
 
 function App() {
   return (
     <div className="App">
       <Title />
-      {/* <header className="Title-row">
-        <img src='/images/octagon_left.png' className="App-logo App-logo-left" alt="octagon_left" />
-        <h1 className='App-title'>OCTADLE</h1>
-        <img src="/images/octagon_right.png" className="App-logo App-logo-right" alt="octagon_right" />
-      </header> */}
       <div>
         <input type="text" className="Guess-prompt" placeholder="Guess"/>
       </div>
@@ -30,8 +26,8 @@ function App() {
       <div className='Attempted-rows'>
         <Fighter 
           fighter={{
-            name: "khabib nurmagomedov",
-            flag: "russia",
+            name: "Khabib Nurmagomedov",
+            flag: "Russia",
             weightClass: "light weight", 
             age: "36", 
             height: "5' 10\"",
@@ -41,8 +37,8 @@ function App() {
         />
         <Fighter 
           fighter={{
-            name: "charles oliveira",
-            flag: "brazil",
+            name: "Charles Oliveira",
+            flag: "Brazil",
             weightClass: "light weight", 
             age: "35", 
             height: "5' 10\"",
@@ -52,8 +48,8 @@ function App() {
         />
         <Fighter 
           fighter={{
-            name: "zabit magomedsharipov",
-            flag: "russia",
+            name: "Zabit Magomedsharipov",
+            flag: "Russia",
             weightClass: "feather weight", 
             age: "34", 
             height: "6' 1\"",
@@ -63,15 +59,9 @@ function App() {
         />
       </div>
       <div className='Unattempted-rows'>
-        <div className='Unattempted-guess'>
-          <p>Guess 4</p>
-        </div>
-        <div className='Unattempted-guess'>
-          <p>Guess 5</p>
-        </div>
-        <div className='Unattempted-guess'>
-          <p>Guess 6</p>
-        </div>
+        <UnattemptedGuess guessNum='4'/>
+        <UnattemptedGuess guessNum='5'/>
+        <UnattemptedGuess guessNum='6'/>
       </div>
     </div>
   );
