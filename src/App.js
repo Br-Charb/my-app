@@ -2,13 +2,14 @@ import './App.css';
 import { Title } from './components/Title'
 import { Fighter } from './components/Fighter';
 import { UnattemptedGuess } from './components/UnattemptedGuess';
+import { GuessBar } from './components/GuessBar';
 
 function App() {
   return (
     <div className="App">
       <Title />
       <div>
-        <input type="text" className="Guess-prompt" placeholder="Guess"/>
+        <GuessBar />
       </div>
       <div className="Response-rows Headings">
         <p className="R1-heading">Name</p>
