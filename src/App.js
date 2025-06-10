@@ -1,17 +1,21 @@
+import React, { useState } from 'react';
 import './App.css';
-import { Title } from './components/Title'
+import { Title } from './components/Title';
 import { Fighter } from './components/Fighter';
 import { UnattemptedGuess } from './components/UnattemptedGuess';
 import { GuessBar } from './components/GuessBar';
 
 function App() {
+
+  const [guessed, setGuessed] = useState(0)
+
   return (
     <div className="App">
       <Title />
       <div>
-        <GuessBar />
+        <GuessBar checkResponse={() => setGuessed(guessed+1)}/>
       </div>
-      <div className="Response-rows Headings">
+      <div className="Response-rows-heading Headings">
         <p className="R1-heading">Name</p>
         <p className="R2-heading">Nationality</p>
         <p className="R2-heading">Weight</p>
@@ -24,19 +28,8 @@ function App() {
       <div>
         <hr className='Divider-line'/>
       </div>
-      <div className='Attempted-rows'>
-        <Fighter 
-          fighter={{
-            name: "Khabib Nurmagomedov",
-            flag: "Russia",
-            weightClass: "light weight", 
-            age: "36", 
-            height: "5' 10\"",
-            wingspan: "70\"", 
-            rank: "Champ", 
-            lastFight: "UFC 254"}} 
-        />
-        <Fighter 
+      <div className='Guess-rows'>
+        {/* <Fighter 
           fighter={{
             name: "Charles Oliveira",
             flag: "Brazil",
@@ -57,12 +50,97 @@ function App() {
             wingspan: "73\"", 
             rank: "#3", 
             lastFight: "Zabit vs Kattar"}} 
-        />
-      </div>
-      <div className='Unattempted-rows'>
-        <UnattemptedGuess guessNum='4'/>
-        <UnattemptedGuess guessNum='5'/>
-        <UnattemptedGuess guessNum='6'/>
+        /> */}
+        {guessed <= 1 ? 
+          (<UnattemptedGuess guessNum='1'/> )
+          :
+          (<Fighter 
+            fighter={{
+              name: "Khabib Nurmagomedov",
+              flag: "Russia",
+              weightClass: "light weight", 
+              age: "36", 
+              height: "5' 10\"",
+              wingspan: "70\"", 
+              rank: "Champ", 
+              lastFight: "UFC 254"}} 
+          />)
+      }
+      {guessed <= 2 ? 
+          (<UnattemptedGuess guessNum='2'/> )
+          :
+          (<Fighter 
+            fighter={{
+              name: "Khabib Nurmagomedov",
+              flag: "Russia",
+              weightClass: "light weight", 
+              age: "36", 
+              height: "5' 10\"",
+              wingspan: "70\"", 
+              rank: "Champ", 
+              lastFight: "UFC 254"}} 
+          />)
+      }
+      {guessed <= 3 ? 
+          (<UnattemptedGuess guessNum='3'/> )
+          :
+          (<Fighter 
+            fighter={{
+              name: "Khabib Nurmagomedov",
+              flag: "Russia",
+              weightClass: "light weight", 
+              age: "36", 
+              height: "5' 10\"",
+              wingspan: "70\"", 
+              rank: "Champ", 
+              lastFight: "UFC 254"}} 
+          />)
+      }
+      {guessed <= 4 ? 
+          (<UnattemptedGuess guessNum='4'/> )
+          :
+          (<Fighter 
+            fighter={{
+              name: "Khabib Nurmagomedov",
+              flag: "Russia",
+              weightClass: "light weight", 
+              age: "36", 
+              height: "5' 10\"",
+              wingspan: "70\"", 
+              rank: "Champ", 
+              lastFight: "UFC 254"}} 
+          />)
+      }
+      {guessed <= 5 ? 
+          (<UnattemptedGuess guessNum='5'/> )
+          :
+          (<Fighter 
+            fighter={{
+              name: "Khabib Nurmagomedov",
+              flag: "Russia",
+              weightClass: "light weight", 
+              age: "36", 
+              height: "5' 10\"",
+              wingspan: "70\"", 
+              rank: "Champ", 
+              lastFight: "UFC 254"}} 
+          />)
+      }
+      {guessed <= 6 ? 
+          (<UnattemptedGuess guessNum='6'/> )
+          :
+          (<Fighter 
+            fighter={{
+              name: "Khabib Nurmagomedov",
+              flag: "Russia",
+              weightClass: "light weight", 
+              age: "36", 
+              height: "5' 10\"",
+              wingspan: "70\"", 
+              rank: "Champ", 
+              lastFight: "UFC 254"}} 
+          />)
+      }
       </div>
     </div>
   );

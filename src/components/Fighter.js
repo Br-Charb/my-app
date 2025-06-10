@@ -12,7 +12,7 @@ export const Fighter = ({ fighter }) => {
       lastFight
     } = fighter;
     return (
-      <div className="Response-rows Response-body-rows">
+      <div className="Response-body-rows">
         <div className='R1-response Answer-wrong'>
           <img src={`/images/fighterImages/${name.split(" ").join("")}.png`} className="Fighter-image" alt={name} />
           <p className="Fighter-name-text"> {name} </p>
