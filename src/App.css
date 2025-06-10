@@ -63,14 +63,7 @@
   border-radius: 20px;
   font-size: 30px;
   padding: 15px;
-  border: 2px solid #ccc;
-  margin-bottom: 20px;
-}
-
-.Headings {
-  margin-bottom: -40px;
-  margin-top: -20px;
-  font-size: 30px;
+  border: 2px solid #ccc;  
 }
 
 .R1-heading {
@@ -86,7 +79,18 @@
   width: 1600px;
 }
 
-.Response-rows {
+.Response-rows-heading {
+  display: grid;
+  gap: 10px;
+  place-items: center;
+  grid-template-columns: 300px 200px 200px repeat(4, 150px) 200px;
+  font-family: 'PersonaAura', sans-serif;
+  font-size: 30px;
+  height: 80px;
+  margin-top: 20px;
+}
+
+.Response-body-rows {
   display: grid;
   gap: 10px;
   place-items: center;
@@ -94,13 +98,11 @@
   height: 140px;
   font-family: 'PersonaAura', sans-serif;
   /* margin-bottom: 10px; */
-  /* outline:1px solid black; */
 }
 
-.Response-body-rows {
-  margin-bottom: 10px;
+.Response-body-rows:last-child {
+  margin-bottom: 30px;
 }
-
 
 
 .R1-response {
@@ -112,7 +114,7 @@
 
 .R2-response {
   font-size: 30px;
-  height: 140px;
+  /* height: 140px; */
   display: flex;
   align-items: center;
   text-align: center;
@@ -144,7 +146,7 @@
   width: 1570px;
   justify-content: center;
   display: flex;
-  margin: 10px;
+  /* margin: 10px; */
   border-radius: 20px;
 
   text-shadow:
@@ -155,12 +157,11 @@
 
 }
 
-.Attempted-rows {
-  margin-top: -20px;
-}
-
-.Unattempted-rows {
-  margin-top: 20px;
+.Guess-rows {
+  display: flex;
+  flex-direction: column;
+  /* outline: 1px solid black; */
+  gap: 10px;
 }
 
 .Fighter-name-text {
