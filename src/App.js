@@ -21,7 +21,7 @@ function App() {
         <p className="R2-heading">Weight</p>
         <p className="R2-heading">Age</p>
         <p className="R2-heading">Height</p>
-        <p className="R2-heading">Wingspan</p>
+        <p className="R2-heading">record</p>
         <p className="R2-heading">Peak Rank</p>
         <p className="R2-heading">Last Fight</p>
       </div>
@@ -36,7 +36,7 @@ function App() {
             weightClass: "light weight", 
             age: "35", 
             height: "5' 10\"",
-            wingspan: "74\"", 
+            record: "74\"", 
             rank: "Champ", 
             lastFight: "UFC 309"}} 
         />
@@ -47,11 +47,11 @@ function App() {
             weightClass: "feather weight", 
             age: "34", 
             height: "6' 1\"",
-            wingspan: "73\"", 
+            record: "73\"", 
             rank: "#3", 
             lastFight: "Zabit vs Kattar"}} 
         /> */}
-        {guessed <= 1 ? 
+        {guessed <= 0 ? 
           (<UnattemptedGuess guessNum='1'/> )
           :
           (<Fighter 
@@ -61,57 +61,57 @@ function App() {
               weightClass: "light weight", 
               age: "36", 
               height: "5' 10\"",
-              wingspan: "70\"", 
+              record: "70\"", 
+              rank: "Champ", 
+              lastFight: "UFC Fight Night: Shevchenko vs. Pena"}} 
+          />)
+      }
+      {guessed <= 1 ? 
+          (<UnattemptedGuess guessNum='2'/> )
+          :
+          (<Fighter 
+            fighter={{
+              name: "Jack Della Maddalena",
+              flag: "Russia",
+              weightClass: "bantam weight (womens)", 
+              age: "36", 
+              height: "5' 10\"",
+              record: "70\"", 
               rank: "Champ", 
               lastFight: "UFC 254"}} 
           />)
       }
       {guessed <= 2 ? 
-          (<UnattemptedGuess guessNum='2'/> )
-          :
-          (<Fighter 
-            fighter={{
-              name: "Khabib Nurmagomedov",
-              flag: "Russia",
-              weightClass: "light weight", 
-              age: "36", 
-              height: "5' 10\"",
-              wingspan: "70\"", 
-              rank: "Champ", 
-              lastFight: "UFC 254"}} 
-          />)
-      }
-      {guessed <= 3 ? 
           (<UnattemptedGuess guessNum='3'/> )
           :
           (<Fighter 
             fighter={{
-              name: "Khabib Nurmagomedov",
+              name: "kimbo slice",
               flag: "Russia",
               weightClass: "light weight", 
               age: "36", 
               height: "5' 10\"",
-              wingspan: "70\"", 
+              record: "70\"", 
+              rank: "Champ", 
+              lastFight: "UFC Fight Night: Ortega vs. The Korean Zombie"}} 
+          />)
+      }
+      {guessed <= 3 ? 
+          (<UnattemptedGuess guessNum='4'/> )
+          :
+          (<Fighter 
+            fighter={{
+              name: "Randy Couture",
+              flag: "Russia",
+              weightClass: "light weight", 
+              age: "36", 
+              height: "5' 10\"",
+              record: "70\"", 
               rank: "Champ", 
               lastFight: "UFC 254"}} 
           />)
       }
       {guessed <= 4 ? 
-          (<UnattemptedGuess guessNum='4'/> )
-          :
-          (<Fighter 
-            fighter={{
-              name: "Khabib Nurmagomedov",
-              flag: "Russia",
-              weightClass: "light weight", 
-              age: "36", 
-              height: "5' 10\"",
-              wingspan: "70\"", 
-              rank: "Champ", 
-              lastFight: "UFC 254"}} 
-          />)
-      }
-      {guessed <= 5 ? 
           (<UnattemptedGuess guessNum='5'/> )
           :
           (<Fighter 
@@ -121,12 +121,12 @@ function App() {
               weightClass: "light weight", 
               age: "36", 
               height: "5' 10\"",
-              wingspan: "70\"", 
+              record: "70\"", 
               rank: "Champ", 
               lastFight: "UFC 254"}} 
           />)
       }
-      {guessed <= 6 ? 
+      {guessed <= 5 ? 
           (<UnattemptedGuess guessNum='6'/> )
           :
           (<Fighter 
@@ -136,9 +136,9 @@ function App() {
               weightClass: "light weight", 
               age: "36", 
               height: "5' 10\"",
-              wingspan: "70\"", 
+              record: "70\"", 
               rank: "Champ", 
-              lastFight: "UFC 254"}} 
+              lastFight: "UFC 254: Nurmagomedov vs. Gaethje"}} 
           />)
       }
       </div>
