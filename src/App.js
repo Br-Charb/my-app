@@ -102,7 +102,7 @@ function App() {
           (<Fighter 
             fighter={{
               name: "Randy Couture",
-              flag: "Russia",
+              flag: "Usa",
               weightClass: "light weight", 
               age: "36", 
               height: "5' 10\"",
@@ -116,8 +116,8 @@ function App() {
           :
           (<Fighter 
             fighter={{
-              name: "Khabib Nurmagomedov",
-              flag: "Russia",
+              name: "Beneil Dariush",
+              flag: "Iran",
               weightClass: "light weight", 
               age: "36", 
               height: "5' 10\"",
@@ -131,8 +131,8 @@ function App() {
           :
           (<Fighter 
             fighter={{
-              name: "Khabib Nurmagomedov",
-              flag: "Russia",
+              name: "Tom Aspinall",
+              flag: "Switzerland",
               weightClass: "light weight", 
               age: "36", 
               height: "5' 10\"",
