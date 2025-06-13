@@ -8,7 +8,7 @@ export const GuessBar = ({ checkResponse, todaysFighter, possibleFighters }) => 
     const returnFighterInfo = ((fighterName) => {
         return possibleFighters.find(possibleFighters => possibleFighters.Fighter.toLowerCase() === fighterName.toLowerCase());
     })
-
+    
     return (
         <input type="text"
             className="Guess-prompt" 

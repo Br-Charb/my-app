@@ -52,32 +52,42 @@ function App() {
         {guessed <= 0 ? 
           (<UnattemptedGuess guessNum='1'/> )
           :
-          (<Fighter fighter={fightersGuessed[0]} />)
+          (<Fighter fighter={fightersGuessed[0]} todaysFighter={todaysFighter} />)
       }
       {guessed <= 1 ? 
           (<UnattemptedGuess guessNum='2'/> )
           :
-          (<Fighter fighter={fightersGuessed[1]} />)
+          (<Fighter fighter={fightersGuessed[1]} todaysFighter={todaysFighter} />)
       }
       {guessed <= 2 ? 
           (<UnattemptedGuess guessNum='3'/> )
           :
-          (<Fighter fighter={fightersGuessed[2]} />)
+          (<Fighter fighter={fightersGuessed[2]} todaysFighter={todaysFighter} />)
       }
       {guessed <= 3 ? 
           (<UnattemptedGuess guessNum='4'/> )
           :
-          (<Fighter fighter={fightersGuessed[3]} />)
+          (<Fighter fighter={fightersGuessed[3]} todaysFighter={todaysFighter} />)
       }
       {guessed <= 4 ? 
           (<UnattemptedGuess guessNum='5'/> )
           :
-          (<Fighter fighter={fightersGuessed[4]} />)
+          (<Fighter fighter={fightersGuessed[4]} todaysFighter={todaysFighter} />)
       }
       {guessed <= 5 ? 
           (<UnattemptedGuess guessNum='6'/> )
           :
-          (<Fighter fighter={fightersGuessed[5]} />)
+          (<Fighter fighter={fightersGuessed[5]} todaysFighter={todaysFighter} />)
+      }
+      {guessed <= 6 ? 
+          (<UnattemptedGuess guessNum='7'/> )
+          :
+          (<Fighter fighter={fightersGuessed[6]} todaysFighter={todaysFighter} />)
+      }
+      {guessed <= 7 ? 
+          (<UnattemptedGuess guessNum='8'/> )
+          :
+          (<Fighter fighter={fightersGuessed[7]} todaysFighter={todaysFighter} />)
       }
       </div>
     </div>
