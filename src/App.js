@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import { Title } from './components/Title';
 import { Fighter } from './components/Fighter';
@@ -7,13 +7,33 @@ import { GuessBar } from './components/GuessBar';
 
 function App() {
 
-  const [guessed, setGuessed] = useState(0)
+  const [guessed, setGuessed] = useState(0);
+  const [todaysFighter, setTodaysFighter] = useState(null);
+  const [allFighters, setAllFighters] = useState(null);
+  const [fightersGuessed, setFightersGuessed] = useState([]);
+
+  useEffect (() => {
+    fetch('/data/FighterInfo.json')
+    .then(response => response.json())
+    .then(data => {
+      setAllFighters(data);
+      const todaysFighterIndex = Math.floor(Math.random() * 242);
+      const selectFighter = data[todaysFighterIndex];
+      setTodaysFighter(selectFighter)
+    })
+  }, [])
+
+  const updateGuessedFighters = ((fighter) => {
+    setFightersGuessed([...fightersGuessed, fighter]);
+    setGuessed(guessed+1);
+    console.log(todaysFighter);
+  })
 
   return (
     <div className="App">
       <Title />
       <div>
-        <GuessBar checkResponse={() => setGuessed(guessed+1)}/>
+        <GuessBar checkResponse={updateGuessedFighters} todaysFighter={todaysFighter} possibleFighters={allFighters}/>
       </div>
       <div className="Response-rows-heading Headings">
         <p className="R1-heading">Name</p>
@@ -29,117 +49,35 @@ function App() {
         <hr className='Divider-line'/>
       </div>
       <div className='Guess-rows'>
-        {/* <Fighter 
-          fighter={{
-            name: "Charles Oliveira",
-            flag: "Brazil",
-            weightClass: "light weight", 
-            age: "35", 
-            height: "5' 10\"",
-            record: "74\"", 
-            rank: "Champ", 
-            lastFight: "UFC 309"}} 
-        />
-        <Fighter 
-          fighter={{
-            name: "Zabit Magomedsharipov",
-            flag: "Russia",
-            weightClass: "feather weight", 
-            age: "34", 
-            height: "6' 1\"",
-            record: "73\"", 
-            rank: "#3", 
-            lastFight: "Zabit vs Kattar"}} 
-        /> */}
         {guessed <= 0 ? 
           (<UnattemptedGuess guessNum='1'/> )
           :
-          (<Fighter 
-            fighter={{
-              name: "Khabib Nurmagomedov",
-              flag: "Russia",
-              weightClass: "light weight", 
-              age: "36", 
-              height: "5' 10\"",
-              record: "70\"", 
-              rank: "Champ", 
-              lastFight: "UFC Fight Night: Shevchenko vs. Pena"}} 
-          />)
+          (<Fighter fighter={fightersGuessed[0]} />)
       }
       {guessed <= 1 ? 
           (<UnattemptedGuess guessNum='2'/> )
           :
-          (<Fighter 
-            fighter={{
-              name: "Jack Della Maddalena",
-              flag: "Russia",
-              weightClass: "bantam weight (womens)", 
-              age: "36", 
-              height: "5' 10\"",
-              record: "70\"", 
-              rank: "Champ", 
-              lastFight: "UFC 254"}} 
-          />)
+          (<Fighter fighter={fightersGuessed[1]} />)
       }
       {guessed <= 2 ? 
           (<UnattemptedGuess guessNum='3'/> )
           :
-          (<Fighter 
-            fighter={{
-              name: "kimbo slice",
-              flag: "Russia",
-              weightClass: "light weight", 
-              age: "36", 
-              height: "5' 10\"",
-              record: "70\"", 
-              rank: "Champ", 
-              lastFight: "UFC Fight Night: Ortega vs. The Korean Zombie"}} 
-          />)
+          (<Fighter fighter={fightersGuessed[2]} />)
       }
       {guessed <= 3 ? 
           (<UnattemptedGuess guessNum='4'/> )
           :
-          (<Fighter 
-            fighter={{
-              name: "Randy Couture",
-              flag: "Usa",
-              weightClass: "light weight", 
-              age: "36", 
-              height: "5' 10\"",
-              record: "70\"", 
-              rank: "Champ", 
-              lastFight: "UFC 254"}} 
-          />)
+          (<Fighter fighter={fightersGuessed[3]} />)
       }
       {guessed <= 4 ? 
           (<UnattemptedGuess guessNum='5'/> )
           :
-          (<Fighter 
-            fighter={{
-              name: "Beneil Dariush",
-              flag: "Iran",
-              weightClass: "light weight", 
-              age: "36", 
-              height: "5' 10\"",
-              record: "70\"", 
-              rank: "Champ", 
-              lastFight: "UFC 254"}} 
-          />)
+          (<Fighter fighter={fightersGuessed[4]} />)
       }
       {guessed <= 5 ? 
           (<UnattemptedGuess guessNum='6'/> )
           :
-          (<Fighter 
-            fighter={{
-              name: "Tom Aspinall",
-              flag: "Switzerland",
-              weightClass: "light weight", 
-              age: "36", 
-              height: "5' 10\"",
-              record: "70\"", 
-              rank: "Champ", 
-              lastFight: "UFC 254: Nurmagomedov vs. Gaethje"}} 
-          />)
+          (<Fighter fighter={fightersGuessed[5]} />)
       }
       </div>
     </div>
