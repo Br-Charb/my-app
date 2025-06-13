@@ -1522,7 +1522,7 @@
   {
     "Fighter": "Magomed Ankalaev",
     "Nationality": "russia",
-    "Weight": "light heavy",
+    "Weight": "light heavy weight",
     "Age": "6/2/1992",
     "Height": "6' 3",
     "Record": "21-1-1",
@@ -1538,7 +1538,7 @@
   {
     "Fighter": "Alex Pereira",
     "Nationality": "brazil",
-    "Weight": "light heavy",
+    "Weight": "light heavy weight",
     "Age": "7/7/1987",
     "Height": "6' 4",
     "Record": "12-3-0",
@@ -1554,7 +1554,7 @@
   {
     "Fighter": "Jiří Procházka",
     "Nationality": "czechia",
-    "Weight": "light heavy",
+    "Weight": "light heavy weight",
     "Age": "10/14/1992",
     "Height": "6' 3",
     "Record": "31-5-1",
@@ -1570,7 +1570,7 @@
   {
     "Fighter": "Carlos Ulberg",
     "Nationality": "new zealand",
-    "Weight": "light heavy",
+    "Weight": "light heavy weight",
     "Age": "11/7/1990",
     "Height": "6' 4",
     "Record": "13-1-0",
@@ -1586,7 +1586,7 @@
   {
     "Fighter": "Jamahal Hill",
     "Nationality": "usa",
-    "Weight": "light heavy",
+    "Weight": "light heavy weight",
     "Age": "5/19/1991",
     "Height": "6' 4",
     "Record": "12-3-0",
@@ -1602,7 +1602,7 @@
   {
     "Fighter": "Jan Błachowicz",
     "Nationality": "poland",
-    "Weight": "light heavy",
+    "Weight": "light heavy weight",
     "Age": "2/24/1983",
     "Height": "6' 2",
     "Record": "29-11-1",
@@ -1618,7 +1618,7 @@
   {
     "Fighter": "Aleksandar Rakić",
     "Nationality": "austria",
-    "Weight": "light heavy",
+    "Weight": "light heavy weight",
     "Age": "2/6/1992",
     "Height": "6' 4",
     "Record": "14-5-0",
@@ -1634,7 +1634,7 @@
   {
     "Fighter": "Khalil Rountree Jr.",
     "Nationality": "usa",
-    "Weight": "light heavy",
+    "Weight": "light heavy weight",
     "Age": "2/26/1990",
     "Height": "6' 1",
     "Record": "14-6-0",
@@ -1650,7 +1650,7 @@
   {
     "Fighter": "Dominick Reyes",
     "Nationality": "usa",
-    "Weight": "light heavy",
+    "Weight": "light heavy weight",
     "Age": "12/26/1989",
     "Height": "6' 4",
     "Record": "15-4-0",
@@ -1666,7 +1666,7 @@
   {
     "Fighter": "Volkan Oezdemir",
     "Nationality": "switzerland",
-    "Weight": "light heavy",
+    "Weight": "light heavy weight",
     "Age": "9/19/1989",
     "Height": "6' 2",
     "Record": "20-8-0",
@@ -1682,7 +1682,7 @@
   {
     "Fighter": "Nikita Krylov",
     "Nationality": "ukraine",
-    "Weight": "light heavy",
+    "Weight": "light heavy weight",
     "Age": "3/7/1992",
     "Height": "6' 3",
     "Record": "30-10-0",
@@ -1698,7 +1698,7 @@
   {
     "Fighter": "Johnny Walker",
     "Nationality": "brazil",
-    "Weight": "light heavy",
+    "Weight": "light heavy weight",
     "Age": "3/30/1992",
     "Height": "6' 6",
     "Record": "21-9-0",
@@ -1714,7 +1714,7 @@
   {
     "Fighter": "Azamat Murzakanov",
     "Nationality": "russia",
-    "Weight": "light heavy",
+    "Weight": "light heavy weight",
     "Age": "4/12/1989",
     "Height": "5' 10",
     "Record": "14-0-0",
@@ -1730,7 +1730,7 @@
   {
     "Fighter": "Zhang Mingyang",
     "Nationality": "china",
-    "Weight": "light heavy",
+    "Weight": "light heavy weight",
     "Age": "8/16/1998",
     "Height": "6' 2",
     "Record": "19-6-0",
@@ -1746,7 +1746,7 @@
   {
     "Fighter": "Bogdan Guskov",
     "Nationality": "uzbekistan",
-    "Weight": "light heavy",
+    "Weight": "light heavy weight",
     "Age": "9/12/1992",
     "Height": "6' 3",
     "Record": "17-3-0",
@@ -1762,7 +1762,7 @@
   {
     "Fighter": "Alonzo Menifield",
     "Nationality": "usa",
-    "Weight": "light heavy",
+    "Weight": "light heavy weight",
     "Age": "10/18/1987",
     "Height": "6' 0",
     "Record": "16-5-1",
@@ -2530,7 +2530,7 @@
   {
     "Fighter": "Julianna Peña",
     "Nationality": "usa",
-    "Weight": "bantamweight (womens)",
+    "Weight": "bantam weight (womens)",
     "Age": "8/19/1989",
     "Height": "5' 6",
     "Record": "13-6-0",
@@ -2546,7 +2546,7 @@
   {
     "Fighter": "Raquel Pennington",
     "Nationality": "usa",
-    "Weight": "bantamweight (womens)",
+    "Weight": "bantam weight (womens)",
     "Age": "9/5/1988",
     "Height": "5' 7",
     "Record": "16-10-0",
@@ -2562,7 +2562,7 @@
   {
     "Fighter": "Kayla Harrison",
     "Nationality": "usa",
-    "Weight": "bantamweight (womens)",
+    "Weight": "bantam weight (womens)",
     "Age": "7/2/1990",
     "Height": "5' 8",
     "Record": "19-1-0",
@@ -2578,7 +2578,7 @@
   {
     "Fighter": "Ketlen Vieira",
     "Nationality": "brazil",
-    "Weight": "bantamweight (womens)",
+    "Weight": "bantam weight (womens)",
     "Age": "8/26/1991",
     "Height": "5' 9",
     "Record": "15-4-0",
@@ -2594,7 +2594,7 @@
   {
     "Fighter": "Norma Dumont",
     "Nationality": "brazil",
-    "Weight": "bantamweight (womens)",
+    "Weight": "bantam weight (womens)",
     "Age": "10/1/1990",
     "Height": "5' 7",
     "Record": "12-2-0",
@@ -2610,7 +2610,7 @@
   {
     "Fighter": "Macy Chiasson",
     "Nationality": "usa",
-    "Weight": "bantamweight (womens)",
+    "Weight": "bantam weight (womens)",
     "Age": "7/27/1991",
     "Height": "5' 11",
     "Record": "11-4-0",
@@ -2626,7 +2626,7 @@
   {
     "Fighter": "Irene Aldana",
     "Nationality": "mexico",
-    "Weight": "bantamweight (womens)",
+    "Weight": "bantam weight (womens)",
     "Age": "3/26/1988",
     "Height": "5' 9",
     "Record": "15-8-0",
@@ -2642,7 +2642,7 @@
   {
     "Fighter": "Ailin Perez",
     "Nationality": "argentina",
-    "Weight": "bantamweight (womens)",
+    "Weight": "bantam weight (womens)",
     "Age": "10/5/1994",
     "Height": "5' 5",
     "Record": "12-2-0",
@@ -2658,7 +2658,7 @@
   {
     "Fighter": "Mayra Bueno Silva",
     "Nationality": "brazil",
-    "Weight": "bantamweight (womens)",
+    "Weight": "bantam weight (womens)",
     "Age": "8/22/1991",
     "Height": "5' 6",
     "Record": "10-5-1",
@@ -2674,7 +2674,7 @@
   {
     "Fighter": "Yana Santos",
     "Nationality": "russia",
-    "Weight": "bantamweight (womens)",
+    "Weight": "bantam weight (womens)",
     "Age": "11/11/1989",
     "Height": "5' 6",
     "Record": "16-8-0",
@@ -2690,7 +2690,7 @@
   {
     "Fighter": "Karol Rosa",
     "Nationality": "brazil",
-    "Weight": "bantamweight (womens)",
+    "Weight": "bantam weight (womens)",
     "Age": "12/30/1994",
     "Height": "5' 5",
     "Record": "18-7-0",
@@ -2706,7 +2706,7 @@
   {
     "Fighter": "Jacqueline Cavalcanti",
     "Nationality": "portugal",
-    "Weight": "bantamweight (womens)",
+    "Weight": "bantam weight (womens)",
     "Age": "8/29/1997",
     "Height": "5' 8",
     "Record": "9-1-0",
@@ -2722,7 +2722,7 @@
   {
     "Fighter": "Nora Cornolle",
     "Nationality": "france",
-    "Weight": "bantamweight (womens)",
+    "Weight": "bantam weight (womens)",
     "Age": "12/6/1989",
     "Height": "5' 7",
     "Record": "9-2-0",
@@ -2738,7 +2738,7 @@
   {
     "Fighter": "Miesha Tate",
     "Nationality": "usa",
-    "Weight": "bantamweight (womens)",
+    "Weight": "bantam weight (womens)",
     "Age": "8/18/1986",
     "Height": "5' 6",
     "Record": "20-10-0",
@@ -2754,7 +2754,7 @@
   {
     "Fighter": "Joselyne Edwards",
     "Nationality": "panama",
-    "Weight": "bantamweight (womens)",
+    "Weight": "bantam weight (womens)",
     "Age": "9/29/1995",
     "Height": "5' 8",
     "Record": "15-6-0",
@@ -2770,7 +2770,7 @@
   {
     "Fighter": "Chelsea Chandler",
     "Nationality": "usa",
-    "Weight": "bantamweight (womens)",
+    "Weight": "bantam weight (womens)",
     "Age": "11/23/1990",
     "Height": "5' 8",
     "Record": "6-4-0",
@@ -2818,7 +2818,7 @@
   {
     "Fighter": "Raul Rojas Jr.",
     "Nationality": "mexico",
-    "Weight": "bantamweight",
+    "Weight": "bantam weight",
     "Age": "10/8/2004",
     "Height": "5' 9",
     "Record": "11-1-0",
@@ -2834,7 +2834,7 @@
   {
     "Fighter": "Amanda Nunes",
     "Nationality": "brazil",
-    "Weight": "bantamweight (womens)",
+    "Weight": "bantam weight (womens)",
     "Age": "5/30/1988",
     "Height": "5' 8",
     "Record": "23-5-0",
@@ -2850,7 +2850,7 @@
   {
     "Fighter": "Alexander Gustafsson",
     "Nationality": "sweden",
-    "Weight": "light heavy",
+    "Weight": "light heavy weight",
     "Age": "1/15/1987",
     "Height": "6' 5",
     "Record": "18-8-0",
@@ -2866,7 +2866,7 @@
   {
     "Fighter": "Antonio Rodrigo Nogueira",
     "Nationality": "brazil",
-    "Weight": "heavyweight",
+    "Weight": "heavy weight",
     "Age": "6/2/1976",
     "Height": "6' 3",
     "Record": "34-10-1",
@@ -2882,7 +2882,7 @@
   {
     "Fighter": "Benson Henderson",
     "Nationality": "usa",
-    "Weight": "lightweight",
+    "Weight": "light weight",
     "Age": "11/16/1983",
     "Height": "5' 9",
     "Record": "30-12-0",
@@ -2898,7 +2898,7 @@
   {
     "Fighter": "BJ Penn",
     "Nationality": "usa",
-    "Weight": "lightweight",
+    "Weight": "light weight",
     "Age": "12/13/1978",
     "Height": "5' 9",
     "Record": "16-14-2",
@@ -2914,7 +2914,7 @@
   {
     "Fighter": "Cain Velasquez",
     "Nationality": "usa",
-    "Weight": "heavyweight",
+    "Weight": "heavy weight",
     "Age": "7/28/1982",
     "Height": "6' 1",
     "Record": "14-3-0",
@@ -2930,7 +2930,7 @@
   {
     "Fighter": "Chris Weidman",
     "Nationality": "usa",
-    "Weight": "middleweight",
+    "Weight": "middle weight",
     "Age": "6/17/1984",
     "Height": "6' 2",
     "Record": "16-8-0",
@@ -2946,7 +2946,7 @@
   {
     "Fighter": "Chuck Liddell",
     "Nationality": "usa",
-    "Weight": "light heavy",
+    "Weight": "light heavy weight",
     "Age": "12/17/1969",
     "Height": "6' 2",
     "Record": "21-8-0",
@@ -2962,7 +2962,7 @@
   {
     "Fighter": "Conor McGregor",
     "Nationality": "ireland",
-    "Weight": "lightweight",
+    "Weight": "light weight",
     "Age": "7/14/1988",
     "Height": "5' 9",
     "Record": "22-6-0",
@@ -2978,7 +2978,7 @@
   {
     "Fighter": "Dan Henderson",
     "Nationality": "usa",
-    "Weight": "middleweight",
+    "Weight": "middle weight",
     "Age": "8/24/1970",
     "Height": "5' 11",
     "Record": "32-15-0",
@@ -2994,7 +2994,7 @@
   {
     "Fighter": "Daniel Cormier",
     "Nationality": "usa",
-    "Weight": "heavyweight",
+    "Weight": "heavy weight",
     "Age": "3/20/1979",
     "Height": "5' 11",
     "Record": "22-3-0",
@@ -3010,7 +3010,7 @@
   {
     "Fighter": "Darren Till",
     "Nationality": "england",
-    "Weight": "middleweight",
+    "Weight": "middle weight",
     "Age": "12/24/1992",
     "Height": "6' 0",
     "Record": "18-5-1",
@@ -3026,7 +3026,7 @@
   {
     "Fighter": "Demetrious Johnson",
     "Nationality": "usa",
-    "Weight": "flyweight",
+    "Weight": "fly weight",
     "Age": "8/13/1986",
     "Height": "5' 3",
     "Record": "27-3-1",
@@ -3042,7 +3042,7 @@
   {
     "Fighter": "Edson Barboza",
     "Nationality": "brazil",
-    "Weight": "featherweight",
+    "Weight": "feather weight",
     "Age": "1/21/1986",
     "Height": "5' 11",
     "Record": "24-12-0",
@@ -3058,7 +3058,7 @@
   {
     "Fighter": "Forrest Griffin",
     "Nationality": "usa",
-    "Weight": "light heavy",
+    "Weight": "light heavy weight",
     "Age": "3/16/1979",
     "Height": "6' 3",
     "Record": "19-7-0",
@@ -3074,7 +3074,7 @@
   {
     "Fighter": "Frankie Edgar",
     "Nationality": "usa",
-    "Weight": "bantamweight",
+    "Weight": "bantam weight",
     "Age": "10/16/1981",
     "Height": "5' 6",
     "Record": "23-11-1",
@@ -3090,7 +3090,7 @@
   {
     "Fighter": "Francis Ngannou",
     "Nationality": "cameroon",
-    "Weight": "heavyweight",
+    "Weight": "heavy weight",
     "Age": "9/5/1986",
     "Height": "6' 4",
     "Record": "17-3-0",
@@ -3314,7 +3314,7 @@
   {
     "Fighter": "Ronda Rousey",
     "Nationality": "usa",
-    "Weight": "bantamweight (womens)",
+    "Weight": "bantam weight (womens)",
     "Age": "2/1/1987",
     "Height": "5' 7",
     "Record": "12-2-0",
@@ -3346,7 +3346,7 @@
   {
     "Fighter": "Shogun Rua",
     "Nationality": "brazil",
-    "Weight": "light heavy",
+    "Weight": "light heavy weight",
     "Age": "11/25/1981",
     "Height": "6' 1",
     "Record": "27-14-1",
@@ -3378,7 +3378,7 @@
   {
     "Fighter": "Thiago Santos",
     "Nationality": "brazil",
-    "Weight": "light heavy",
+    "Weight": "light heavy weight",
     "Age": "1/7/1984",
     "Height": "6' 2",
     "Record": "22-11-0",
@@ -3394,7 +3394,7 @@
   {
     "Fighter": "TJ Dillashaw",
     "Nationality": "usa",
-    "Weight": "bantamweight",
+    "Weight": "bantam weight",
     "Age": "2/7/1986",
     "Height": "5' 6",
     "Record": "17-5-0",
@@ -3522,7 +3522,7 @@
   {
     "Fighter": "Anthony Johnson",
     "Nationality": "usa",
-    "Weight": "light heavy",
+    "Weight": "light heavy weight",
     "Age": "3/6/1984",
     "Height": "6' 2",
     "Record": "23-6-0",
@@ -3570,7 +3570,7 @@
   {
     "Fighter": "Dominick Cruz",
     "Nationality": "usa",
-    "Weight": "bantamweight",
+    "Weight": "bantam weight",
     "Age": "3/9/1985",
     "Height": "5' 8",
     "Record": "24-4-0",
@@ -3618,7 +3618,7 @@
   {
     "Fighter": "Marlon Moraes",
     "Nationality": "brazil",
-    "Weight": "bantamweight",
+    "Weight": "bantam weight",
     "Age": "4/26/1988",
     "Height": "5' 6",
     "Record": "23-11-1",
@@ -3650,7 +3650,7 @@
   {
     "Fighter": "Quinton Jackson",
     "Nationality": "usa",
-    "Weight": "light heavy",
+    "Weight": "light heavy weight",
     "Age": "6/20/1978",
     "Height": "6' 1",
     "Record": "38-14-0",
@@ -3682,7 +3682,7 @@
   {
     "Fighter": "Rashad Evans",
     "Nationality": "usa",
-    "Weight": "light heavy",
+    "Weight": "light heavy weight",
     "Age": "9/25/1979",
     "Height": "6' 0",
     "Record": "20-8-1",
@@ -3794,7 +3794,7 @@
   {
     "Fighter": "Tito Ortiz",
     "Nationality": "usa",
-    "Weight": "light heavy",
+    "Weight": "light heavy weight",
     "Age": "1/23/1975",
     "Height": "6' 3",
     "Record": "21-12-1",
