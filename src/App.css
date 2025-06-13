@@ -98,13 +98,7 @@
   place-items: center;
   grid-template-columns: 300px 200px 200px repeat(4, 150px) 200px;
   font-family: 'PersonaAura', sans-serif;
-  /* margin: 10px; */
 }
-
-/* .Response-body-rows:last-child {
-  margin-bottom: 30px;
-} */
-
 
 .R1-response {
   width: 300px;
@@ -114,6 +108,7 @@
 
 .R2-response {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100%;
@@ -121,7 +116,20 @@
   border-radius: 20px;
   box-sizing: border-box;
   padding: 10px;
+}
 
+.Up-arrow {
+  height: 30px;
+  width: 100px;
+  filter: invert();
+  margin-bottom: -15px;
+}
+
+.Down-arrow {
+  height: 30px;
+  width: 100px;
+  filter: invert();
+  margin-top: -15px;
 }
 
 .Flag-image {
@@ -131,7 +139,6 @@
 .Fighter-image {
   margin-top: 12px;
   height: 110px;
-  /* outline: 1px solid black; */
   margin-bottom: -25px;
 }
 
@@ -145,7 +152,6 @@
   width: 1570px;
   justify-content: center;
   display: flex;
-  /* margin: 10px; */
   border-radius: 20px;
 
   text-shadow:
@@ -179,7 +185,7 @@
 }
 .Last-fight-box {
   width: 200px;
-  font-size: 22px;
+  font-size: 20px;
 }
 
 .Answer-close {
