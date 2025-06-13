@@ -1,8 +1,13 @@
 import React, {useState} from 'react';
 
-export const GuessBar = ({ checkResponse }) => {
+export const GuessBar = ({ checkResponse, todaysFighter, possibleFighters }) => {
 
     const [inputValue, setInputValue] = useState('');
+    const [fighter, setFighter] = useState(null);
+
+    const returnFighterInfo = ((fighterName) => {
+        return possibleFighters.find(possibleFighters => possibleFighters.Fighter.toLowerCase() === fighterName.toLowerCase());
+    })
 
     return (
         <input type="text"
@@ -16,11 +21,11 @@ export const GuessBar = ({ checkResponse }) => {
             }
             onKeyDown={(e) => {
                 if (e.key === "Enter"){
-                    console.log(inputValue === "khabib nurmagomedov");
-                    // inputValue.toLowerCase() === "khabib nurmagomedov"
-                    if (1) {
+                    let fighter = returnFighterInfo(inputValue);
+                    if (fighter !== undefined) {
+                        checkResponse(fighter);
                         setInputValue('');
-                        checkResponse();
+                        fighter = null;
                     }
                 }
             }}
