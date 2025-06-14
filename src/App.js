@@ -41,7 +41,7 @@ function App() {
         <p className="R2-heading">Weight</p>
         <p className="R2-heading">Age</p>
         <p className="R2-heading">Height</p>
-        <p className="R2-heading">record</p>
+        <p className="R2-heading">Wins</p>
         <p className="R2-heading">Peak Rank</p>
         <p className="R2-heading">Last Fight</p>
       </div>
@@ -49,7 +49,7 @@ function App() {
         <hr className='Divider-line'/>
       </div>
       <div className='Guess-rows'>
-        {guessed <= 0 ? 
+      {guessed <= 0 ? 
           (<UnattemptedGuess guessNum='1'/> )
           :
           (<Fighter fighter={fightersGuessed[0]} todaysFighter={todaysFighter} />)

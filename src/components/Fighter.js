@@ -1,4 +1,5 @@
 import React from 'react';
+import { StatBox } from './StatBox';
 
 export const Fighter = ({ fighter, todaysFighter }) => {
     const {
@@ -9,62 +10,92 @@ export const Fighter = ({ fighter, todaysFighter }) => {
       Height: height, 
       Record: record, 
       PeakRank: rank, 
-      LastFight: lastFight
+      LastFight: lastFight,
+      LastFightDate: lastFightDate
     } = fighter;
 
-    const ageInYears = Math.floor((Date.now() - (new Date(age)))/31622400000);
+    const {
+      Fighter: correctName, 
+      Nationality: correctFlag, 
+      Weight: correctWeightClass, 
+      Age: correctAge, 
+      Height: correctHeight, 
+      Record: correctRecord, 
+      PeakRank: correctRank, 
+      LastFight: correctLastFight,
+      LastFightDate: correctLastFightDate
+    } = todaysFighter;
 
-    const compareFighter = ((curFighterStat, todaysFighterStat) => {
-      if (curFighterStat.toLowerCase() === todaysFighterStat.toLowerCase()) return "Answer-correct";
-      if (curFighterStat.toLowerCase() !== todaysFighterStat.toLowerCase()) return "Answer-wrong";
-    })
+    const weightClassToNumber = {
+      "straw weight": 1,
+      "fly weight": 2,
+      "fly weight": 2,
+      "bantam weight": 3,
+      "feather weight": 4,
+      "light weight": 5,
+      "welter weight": 6,
+      "middle weight": 7,
+      "light heavy weight": 8,
+      "heavy weight": 9
+    }
 
-    const checkForWin = ((curFighter, correctFighter) => {
-      return curFighter === correctFighter;
-    })
+    const ageInYears = ((age) => Math.floor((Date.now() - (new Date(age)))/31622400000));
+    
+    const translateWins = ((record) => record.split("-")[0]);
+
+    const translateRank = ((rank) => {
+      if (rank.toLowerCase() === "champ") return 17
+      else if (rank.toLowerCase() == "interim champ") return 16
+      else if (rank.toLowerCase() === "unranked") return 0
+      else return 16-Number(rank.slice(1));
+    });
+
+    const translateHeight = ((height) => Number(height.split("' ")[0])*12 + Number(height.split("' ")[1]));
+
+    const checkCorrectGuess = ((currFighter, correctFighter) => {
+      return currFighter === correctFighter;
+    });
 
     return (
       <div className="Response-body-rows">
-        {checkForWin(fighter, todaysFighter) ?
+        {checkCorrectGuess(fighter, todaysFighter) ?
           (
           <>
-            <div className="R1-response Answer-correct">
-            <img src={`/images/fighterImages/${name.split(" ").join("")}.png`} className="Fighter-image" alt={name} />
-            <p className="Fighter-name-text"> {name} </p>
-            </div>
-            <p className={`R2-response Nationality-weight-box ${"Answer-correct"}`}><img src={`/images/flags/${flag}.png`} className="Flag-image" alt={`${flag} Flag`} /></p>
-            <p className={`R2-response Nationality-weight-box ${"Answer-correct"}`}>{weightClass}</p>
-            <p className="R2-response Age-height-record-peakrank-box Answer-correct">{ageInYears}</p>
-            <p className="R2-response Age-height-record-peakrank-box Answer-correct">{`${height}\"`}</p>
-            <p className="R2-response Age-height-record-peakrank-box Answer-correct">{record}</p>
-            <p className="R2-response Age-height-record-peakrank-box Answer-correct">{rank}</p>
-            <p className="R2-response Last-fight-box Answer-correct">{lastFight}</p>
+            <StatBox text={name} value={name} correctValue={correctName} type={"name"} />
+
+            <StatBox text={flag} value={flag} correctValue={correctFlag} type={"nationality"} />
+
+            <StatBox text={weightClass} value={weightClassToNumber[weightClass]} correctValue={weightClassToNumber[correctWeightClass]} type={"weightClass"} />
+
+            <StatBox text={ageInYears(age)} value={ageInYears(age)} correctValue={ageInYears(correctAge)} type={"age"} />
+
+            <StatBox text={`${height}\"`} value={translateHeight(height)} correctValue={translateHeight(correctHeight)} type={"height"} />
+
+            <StatBox text={translateWins(record)} value={translateWins(record)} correctValue={translateWins(correctRecord)} type={"wins"} />
+
+            <StatBox text={rank} value={translateRank(rank)} correctValue={translateRank(correctRank)} type={"rank"} />
+
+            <StatBox text={lastFight} value={(new Date(lastFightDate)).getTime()} correctValue={(new Date(correctLastFightDate)).getTime()} type={"lastFight"} />
           </>
           )
         :
           (
             <>
-              <div className={`R1-response ${compareFighter(name, todaysFighter.Fighter)}`}>
-              <img src={`/images/fighterImages/${name.split(" ").join("")}.png`} className="Fighter-image" alt={name} />
-              <p className="Fighter-name-text"> {name} </p>
+              <StatBox text={name} value={name} correctValue={correctName} type={"name"} />
 
-              </div>
-              <div className={`R2-response Nationality-weight-box ${compareFighter(flag, todaysFighter.Nationality)}`}>
-                <p><img src={`/images/flags/${flag}.png`} className="Flag-image" alt={`${flag} Flag`} /></p>
-              </div>
-              <div className={`R2-response Nationality-weight-box ${compareFighter(weightClass, todaysFighter.Weight)}`}>
-                {/* <img className="Up-arrow" src="/images/general/UpArrow.png" /> */}
-                <p>{weightClass}  </p>
-                <img className="Down-arrow" src="/images/general/DownArrow.png" />
-              </div>
-              <p className={`R2-response Age-height-record-peakrank-box ${compareFighter(age, todaysFighter.Age)}`}>{ageInYears}</p>
-              <p className={`R2-response Age-height-record-peakrank-box ${compareFighter(age, todaysFighter.Age)}`}>{`${height}\"`}</p>
-              <p className={`R2-response Age-height-record-peakrank-box ${compareFighter(age, todaysFighter.Age)}`}>{record}</p>
-              <p className={`R2-response Age-height-record-peakrank-box ${compareFighter(age, todaysFighter.Age)}`}>{rank}</p>
-              <div className={`R2-response Last-fight-box ${compareFighter(age, todaysFighter.Age)}`}>
-                <img className="Up-arrow" src="/images/general/UpArrow.png" />
-                <p>{lastFight}</p>
-              </div>
+              <StatBox text={flag} value={flag} correctValue={correctFlag} type={"nationality"} />
+
+              <StatBox text={weightClass} value={weightClassToNumber[weightClass]} correctValue={weightClassToNumber[correctWeightClass]} type={"weightClass"} />
+
+              <StatBox text={ageInYears(age)} value={ageInYears(age)} correctValue={ageInYears(correctAge)} type={"age"} />
+
+              <StatBox text={`${height}\"`} value={translateHeight(height)} correctValue={translateHeight(correctHeight)} type={"height"} />
+
+              <StatBox text={translateWins(record)} value={translateWins(record)} correctValue={translateWins(correctRecord)} type={"wins"} />
+
+              <StatBox text={rank} value={translateRank(rank)} correctValue={translateRank(correctRank)} type={"rank"} />
+
+              <StatBox text={lastFight} value={new Date(lastFightDate)} correctValue={new Date(correctLastFightDate)} type={"lastFight"} />
           </>
           )
         }
