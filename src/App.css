@@ -180,8 +180,13 @@
   font-size: 25px;
 }
 
-.Age-height-record-peakrank-box {
+.Age-height-record-box {
   width: 150px;
+}
+
+.Peakrank-box {
+  width: 150px;
+  font-size: 25px;
 }
 .Last-fight-box {
   width: 200px;
