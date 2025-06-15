@@ -22,6 +22,8 @@ export const StatBox = (({text, value, correctValue, type}) => {
     const showArrow = (["weightClass", "age", "height", "wins", "rank", "lastFight"].includes(type)) && (value !== correctValue);
 
     const arrowDirection = value - correctValue > 0 ? true : false;
+
+    console.log(value)
     return(
         <>
             {type !== "name" ?
@@ -29,7 +31,7 @@ export const StatBox = (({text, value, correctValue, type}) => {
                 <div className={`R2-response ${getStyle[type]} ${compareFighter(value, correctValue)}`}>
                     {showArrow && !(arrowDirection) && <img className="Up-arrow" src="/images/general/UpArrow.png" />}
                     {type !== "nationality" && <p>{text}</p>}
-                    {type === "nationality" && <p><img src={`/images/flags/${text}.png`} className="Flag-image" alt={`${text} Flag`} /></p>}
+                    {type === "nationality" && <p><img src={`/images/flags/${text.split(" ").join("")}.png`} className="Flag-image" alt={`${text} Flag`} /></p>}
                     {showArrow && (arrowDirection) && <img className="Down-arrow" src="/images/general/DownArrow.png" />}
                 </div>
                 )
