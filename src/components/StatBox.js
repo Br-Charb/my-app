@@ -4,7 +4,7 @@ export const StatBox = (({text, value, correctValue, type}) => {
 
     const compareFighter = ((currFighterStat, todaysFighterStat) => {
         if (currFighterStat === todaysFighterStat) return "Answer-correct";
-        else if (["weightClass", "age", "height", "wins", "rank"].includes(type.toLowerCase()) && Math.abs(value-correctValue) <= 3) return "Answer-close";
+        else if (["weightclass", "age", "height", "wins", "rank"].includes(type.toLowerCase()) && Math.abs(value-correctValue) <= 3) return "Answer-close";
         else if (type === "lastFight" && Math.abs(value-correctValue) <= 7905600000) return "Answer-close";
         if (currFighterStat !== todaysFighterStat) return "Answer-wrong";
     })
@@ -22,7 +22,6 @@ export const StatBox = (({text, value, correctValue, type}) => {
     const showArrow = (["weightClass", "age", "height", "wins", "rank", "lastFight"].includes(type)) && (value !== correctValue);
 
     const arrowDirection = value - correctValue > 0 ? true : false;
-
     return(
         <>
             {type !== "name" ?
