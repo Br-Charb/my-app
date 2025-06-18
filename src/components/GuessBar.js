@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-export const GuessBar = ({ checkResponse, todaysFighter, possibleFighters }) => {
+export const GuessBar = (({ checkResponse, todaysFighter, possibleFighters }) => {
 
     const [inputValue, setInputValue] = useState('');
     const [fighter, setFighter] = useState(null);
@@ -61,4 +61,4 @@ export const GuessBar = ({ checkResponse, todaysFighter, possibleFighters }) => 
             </div>}
         </>
     );
-}
+})

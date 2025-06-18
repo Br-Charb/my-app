@@ -1,9 +1,12 @@
 import React, { UseEffect, useState } from "react";
+import Popup from 'reactjs-popup';
 
 export const GameOver = (() => {
+
     return (
-        <div>
-            Game Over
-        </div>
+        <>
+            <Popup>
+            </Popup>
+        </>
     )
 })

@@ -52,10 +52,6 @@ export const Fighter = ({ fighter, todaysFighter }) => {
 
     const translateHeight = ((height) => Number(height.split("' ")[0])*12 + Number(height.split("' ")[1]));
 
-    const checkCorrectGuess = ((currFighter, correctFighter) => {
-      return currFighter === correctFighter;
-    });
-
     return (
       <div className="Response-body-rows">
           <>

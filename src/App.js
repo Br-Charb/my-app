@@ -4,6 +4,7 @@ import { Title } from './components/Title';
 import { Fighter } from './components/Fighter';
 import { UnattemptedGuess } from './components/UnattemptedGuess';
 import { GuessBar } from './components/GuessBar';
+import { GameOver } from './components/GameOver';
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
   const [todaysFighter, setTodaysFighter] = useState(null);
   const [allFighters, setAllFighters] = useState(null);
   const [fightersGuessed, setFightersGuessed] = useState([]);
+  const [gameComplete, setGameComplete] = useState(false);
 
   useEffect (() => {
     fetch('/data/FighterInfo.json')
@@ -27,11 +29,19 @@ function App() {
     setFightersGuessed([...fightersGuessed, fighter]);
     setGuessed(guessed+1);
     console.log(todaysFighter);
+    checkGameOver(fighter);
   })
+
+  const checkGameOver = ((currFighter) => {
+    if (currFighter === todaysFighter || guessed === 8) {
+      setGameComplete(true);
+    }
+  });
 
   return (
     <div className="App">
       <Title />
+      {gameComplete && <GameOver />}
       <div>
         <GuessBar checkResponse={updateGuessedFighters} todaysFighter={todaysFighter} possibleFighters={allFighters}/>
       </div>
