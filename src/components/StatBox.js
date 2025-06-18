@@ -2,10 +2,16 @@ import React from "react";
 
 export const StatBox = (({text, value, correctValue, type}) => {
 
+    const compareTime = ((guessedTime, correctTime) => {
+        if (guessedTime.getTime() === correctTime.getTime()) return "Answer-correct";
+        else if (Math.abs(guessedTime-correctTime) <= 7905600000) return "Answer-close";
+        else return "Answer-wrong";
+    })
+
     const compareFighter = ((currFighterStat, todaysFighterStat) => {
         if (currFighterStat === todaysFighterStat) return "Answer-correct";
         else if (["weightclass", "age", "height", "wins", "rank"].includes(type.toLowerCase()) && Math.abs(value-correctValue) <= 3) return "Answer-close";
-        else if (type === "lastFight" && Math.abs(value-correctValue) <= 7905600000) return "Answer-close";
+        else if (type === "lastFight") return compareTime(currFighterStat, todaysFighterStat);
         if (currFighterStat !== todaysFighterStat) return "Answer-wrong";
     })
 
