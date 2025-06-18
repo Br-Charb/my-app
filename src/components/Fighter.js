@@ -58,7 +58,24 @@ export const Fighter = ({ fighter, todaysFighter }) => {
 
     return (
       <div className="Response-body-rows">
-        {checkCorrectGuess(fighter, todaysFighter) ?
+          <>
+            <StatBox text={name} value={name} correctValue={correctName} type={"name"} />
+
+            <StatBox text={flag} value={flag} correctValue={correctFlag} type={"nationality"} />
+
+            <StatBox text={weightClass} value={weightClassToNumber[weightClass]} correctValue={weightClassToNumber[correctWeightClass]} type={"weightClass"} />
+
+            <StatBox text={ageInYears(age)} value={ageInYears(age)} correctValue={ageInYears(correctAge)} type={"age"} />
+
+            <StatBox text={`${height}\"`} value={translateHeight(height)} correctValue={translateHeight(correctHeight)} type={"height"} />
+
+            <StatBox text={translateWins(record)} value={translateWins(record)} correctValue={translateWins(correctRecord)} type={"wins"} />
+
+            <StatBox text={rank} value={translateRank(rank)} correctValue={translateRank(correctRank)} type={"rank"} />
+
+            <StatBox text={lastFight} value={new Date(lastFightDate)} correctValue={new Date(correctLastFightDate)} type={"lastFight"} />
+          </>
+        {/* {checkCorrectGuess(fighter, todaysFighter) ?
           (
           <>
             <StatBox text={name} value={name} correctValue={correctName} type={"name"} />
@@ -98,7 +115,7 @@ export const Fighter = ({ fighter, todaysFighter }) => {
               <StatBox text={lastFight} value={new Date(lastFightDate)} correctValue={new Date(correctLastFightDate)} type={"lastFight"} />
           </>
           )
-        }
+        } */}
       </div>
     );
 }
