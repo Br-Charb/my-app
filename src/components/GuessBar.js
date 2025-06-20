@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-export const GuessBar = (({ checkResponse, todaysFighter, possibleFighters }) => {
+export const GuessBar = (({ checkResponse, possibleFighters, disableinput }) => {
 
     const [inputValue, setInputValue] = useState('');
     const [fighter, setFighter] = useState(null);
@@ -24,41 +24,52 @@ export const GuessBar = (({ checkResponse, todaysFighter, possibleFighters }) =>
     })
     
     return (
-        
         <>
-            <div>
-                <input type="text"
-                    className="Guess-prompt" 
-                    placeholder="Guess"
-                    value={inputValue}
+            {disableinput ? 
+                (
+                    <>
+                        <input type='text' className='Guess-prompt' placeholder='Game Over' disabled/>
+                    </>
+                )
+                :
+                (
+                    <>
+                        <div>
+                            <input type="text"
+                                className="Guess-prompt" 
+                                placeholder="Guess"
+                                value={inputValue}
 
-                    onFocus={() => setIsOpen(true)}
-                    onBlur={() => setTimeout(() => setIsOpen(false), 100)}
+                                onFocus={() => setIsOpen(true)}
+                                onBlur={() => setTimeout(() => setIsOpen(false), 100)}
 
-                    onChange={(e) => {
-                        console.log(inputValue);
-                        setInputValue(e.target.value);
-                    }
-                    }
-                    onKeyDown={(e) => {
-                        if (e.key === "Enter"){
-                            let fighter = returnFighterInfo(inputValue);
-                            if (fighter !== undefined) {
-                                submitFighter(fighter);
-                                fighter = null;
-                            }
-                        }
-                    }}
-                />
-            </div>
-            {<div className={`Guess-options ${isOpen ? "open" : "close"}`}>
-                {Array.isArray(possibleFighters) &&
-                    possibleFighters.filter(item => checkNameSimilarity(inputValue.toLowerCase(), item.Fighter.toLowerCase())).map((item) => (
-                    <div className='Individual-guess' onClick={() => submitFighter(item)}>
-                        {item.Fighter}
-                    </div>
-                ))}
-            </div>}
+                                onChange={(e) => {
+                                    console.log(inputValue);
+                                    setInputValue(e.target.value);
+                                }
+                                }
+                                onKeyDown={(e) => {
+                                    if (e.key === "Enter"){
+                                        let fighter = returnFighterInfo(inputValue);
+                                        if (fighter !== undefined) {
+                                            submitFighter(fighter);
+                                            fighter = null;
+                                        }
+                                    }
+                                }}
+                            />
+                        </div>
+                        {<div className={`Guess-options ${isOpen ? "open" : "close"}`}>
+                            {Array.isArray(possibleFighters) &&
+                                possibleFighters.filter(item => checkNameSimilarity(inputValue.toLowerCase(), item.Fighter.toLowerCase())).map((item) => (
+                                <div className='Individual-guess' onClick={() => submitFighter(item)}>
+                                    {item.Fighter}
+                                </div>
+                            ))}
+                        </div>}
+                    </>
+                )
+            }
         </>
     );
 })
