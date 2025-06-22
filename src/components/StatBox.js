@@ -25,7 +25,7 @@ export const StatBox = (({text, value, correctValue, type}) => {
         "lastFight": "Last-fight-box"
     }
     
-    const showArrow = (["weightClass", "age", "height", "wins", "rank", "lastFight"].includes(type)) && (value !== correctValue);
+    const showArrow = ((["weightClass", "age", "height", "wins", "rank"].includes(type)) && (value !== correctValue)) || ((type === "lastFight") && !(value.getTime() === correctValue.getTime()))
 
     const arrowDirection = value - correctValue > 0 ? true : false;
 
