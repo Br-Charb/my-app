@@ -33,17 +33,21 @@ function App() {
   })
 
   const checkGameOver = ((currFighter) => {
-    if (currFighter === todaysFighter || guessed === 8) {
+    if (currFighter === todaysFighter || guessed === 7) {
       setGameComplete(true);
     }
+
   });
 
   return (
     <div className="App">
       <Title />
-      {gameComplete && <GameOver />}
       <div>
-        <GuessBar checkResponse={updateGuessedFighters} todaysFighter={todaysFighter} possibleFighters={allFighters}/>
+        <GuessBar checkResponse={updateGuessedFighters} possibleFighters={allFighters} disableinput={gameComplete} />
+        {/* <button className='Show-player'></button> */}
+      </div>
+      <div>
+        {gameComplete && <GameOver fighter={todaysFighter} guesses={guessed} openMenu={gameComplete}/>}
       </div>
       <div className="Response-rows-heading Headings">
         <p className="R1-heading">Name</p>

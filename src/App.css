@@ -53,7 +53,6 @@
   display: flex;
   margin-top: 60px;
   margin-bottom: 0px;
-  /* outline:1px solid black; */
   height: 275px;
 }
 
@@ -65,6 +64,21 @@
   padding: 15px;
   border: 2px solid #ccc;  
   margin-bottom: 10px;
+}
+
+.Show-player {
+  width: 100%;
+  height: 30px;
+  /* border-radius: 20px; */
+  font-size: 30px;
+  padding: 15px;
+  border: 2px solid #ccc;  
+}
+
+.Input-row {
+  display: flex;
+  width: 950px;
+  height: 100px;
 }
 
 .R1-heading {
@@ -116,7 +130,8 @@
   font-size: 30px;
   border-radius: 20px;
   box-sizing: border-box;
-  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .Up-arrow {
@@ -166,13 +181,11 @@
 .Guess-rows {
   display: flex;
   flex-direction: column;
-  /* outline: 1px solid black; */
   gap: 20px;
 }
 
 .Fighter-name-text {
   font-size: 22px;
-  /* outline: 1px solid black; */
   margin-bottom: -10px;
 }
 
@@ -223,22 +236,23 @@
   flex-direction: column;
   align-items: stretch;
   justify-content: flex-start;
-  font-size: 30px;
+  font-size: 40px;
   border-radius: 20px;
   overflow-y: scroll;
+  text-align: center;
 
   max-height: 0px;
   overflow: hidden;
   transition: max-height 0.4s ease;
 }
 
-.Guess-options::-webkit-scrollbar {
-  display: none;
-}
-
 .Guess-options.open {
   max-height: 247px;
   overflow-y: auto;
+}
+
+.Guess-options::-webkit-scrollbar {
+  display: none;
 }
 
 .Individual-guess {
@@ -260,4 +274,130 @@
     1px -1px 0 black,
     -1px 1px 0 black,
     1px 1px 0 black;
+}
+
+.Popup-box {
+  margin-top: 40px;
+  height: 400px;
+  width: 1600px;
+  color: black;
+  display: flex;
+  align-items: stretch;
+  font-size: 30px;
+  font-family: 'PersonaAura', sans-serif;
+}
+
+.Popup-image-div {
+  background: #d28888;
+  border-radius: 20px;
+  margin-right: 20px;
+  outline: 3px solid black;
+}
+
+.Popup-image {
+  height: 100%;
+  /* filter: brightness(0%); */
+}
+
+.Popup-info-boxes {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.Popup-name {
+  background: #d28888;
+  outline: 3px solid black;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  height: 32%;
+}
+
+.Popup-name-upper {
+  color: black;
+  text-align: left;
+  vertical-align: top;
+  font-size: 30px;
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+.Popup-name-lower {
+  color: white;
+  margin-top: 0px;
+  font-size: 60px;
+}
+
+.Popup-info {
+  background: #d28888;
+  outline: 3px solid black;
+  border-radius: 20px;
+  height: 100%;
+  display: flex;
+  /* display: column; */
+  justify-content: center;
+  padding-top: 40px;
+}
+
+.Popup-stat-left {
+  display: block;
+  flex-direction: column;
+  height: 50%;
+  width: 75%
+}
+
+.Popup-stat-stack {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  gap: 20px;
+}
+
+.Popup-stat-right {
+  height: 100%;
+  width: 25%;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+.Popup-flag {
+  height: 50px;
+  margin-top: 5px;
+}
+
+.Popup-stat {
+  display: inline-block;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  color: black;
+}
+.Popup-stat-text {
+  color: white;
+  height: 70%;
+  margin-top: 0px;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  /* outline: 1px solid black; */
+
+}
+
+.Popup-right-height {
+  height: 55%;
+}
+
+.Popup-stat-heading {
+  height: 30%;
+  font-size: 20px;
+  /* outline: 1px solid black; */
+  bottom: 0;
+  /* align-self: flex-end; */
+}
+
+.Popup-stat-heading-right {
+  height: 15%;
+  font-size: 20px;
+  padding-top: 40px;
 }
