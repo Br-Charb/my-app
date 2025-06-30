@@ -13,6 +13,7 @@ function App() {
   const [allFighters, setAllFighters] = useState(null);
   const [fightersGuessed, setFightersGuessed] = useState([]);
   const [gameComplete, setGameComplete] = useState(false);
+  const [showSilhoutte, setShowSilhoutte] = useState(false);
 
   useEffect (() => {
     fetch('/data/FighterInfo.json')
@@ -35,6 +36,7 @@ function App() {
   const checkGameOver = ((currFighter) => {
     if (currFighter === todaysFighter || guessed === 7) {
       setGameComplete(true);
+      setShowSilhoutte(true);
     }
 
   });
@@ -42,12 +44,12 @@ function App() {
   return (
     <div className="App">
       <Title />
-      <div>
+      <div className='Input-row'>
         <GuessBar checkResponse={updateGuessedFighters} possibleFighters={allFighters} disableinput={gameComplete} />
-        {/* <button className='Show-player'></button> */}
+        <button className='Show-player' onClick={() => setShowSilhoutte(!(showSilhoutte))}>Show Fighter</button>
       </div>
       <div>
-        {gameComplete && <GameOver fighter={todaysFighter} guesses={guessed} openMenu={gameComplete}/>}
+        {(showSilhoutte) && <GameOver fighter={todaysFighter} guesses={guessed} silhoutteViewable={gameComplete}/>}
       </div>
       <div className="Response-rows-heading Headings">
         <p className="R1-heading">Name</p>

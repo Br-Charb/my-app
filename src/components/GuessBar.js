@@ -33,7 +33,7 @@ export const GuessBar = (({ checkResponse, possibleFighters, disableinput }) => 
                 )
                 :
                 (
-                    <>
+                    <div>
                         <div>
                             <input type="text"
                                 className="Guess-prompt" 
@@ -67,7 +67,7 @@ export const GuessBar = (({ checkResponse, possibleFighters, disableinput }) => 
                                 </div>
                             ))}
                         </div>}
-                    </>
+                    </div>
                 )
             }
         </>

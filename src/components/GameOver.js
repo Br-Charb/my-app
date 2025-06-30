@@ -1,24 +1,28 @@
 import React, { UseEffect, useState } from "react";
 
-export const GameOver = (({ fighter, guesses, openMenu}) => {
+export const GameOver = (({ fighter, guesses, silhoutteViewable}) => {
 
     const [open, setOpen] = useState(true);
 
+    const silhoutteCheck = ((silhoutteViewable) => {
+        return silhoutteViewable ? "" : "Silhoutte";
+    })
 
-    {/* 
-          className={`Guess-options ${isOpen ? "open" : "close"}`}
-        */}
+    const showName = ((silhoutteViewable, fighter) => {
+        return silhoutteViewable ? fighter.Fighter : "Unknown";
+    })
+
     return (
             <div className="Popup-box">
                 <div className="Popup-image-div">
-                    <img src={`/images/fighterImages/${fighter.Fighter.split(" ").join("")}.png`} className="Popup-image" alt={fighter.Fighter} /> 
+                    <img src={`/images/fighterImages/${fighter.Fighter.split(" ").join("")}.png`} className={`Popup-image ${silhoutteCheck(silhoutteViewable)}`} alt={fighter.Fighter} /> 
                 </div>
                 <div className="Popup-info-boxes">
                     <div className="Popup-name">
                         <p className="Popup-name-upper">Todays Fighter...</p>
-                        <p className="Popup-name-lower">{fighter.Fighter}</p>
+                        <p className="Popup-name-lower">{showName(silhoutteViewable, fighter)}</p>
                     </div>
-                    <div className="Popup-info open">
+                    {silhoutteViewable && <div className="Popup-info open">
                         <div className="Popup-stat-left">
                             <div className="Popup-stat-stack">
                                 <div className="Popup-stat">
@@ -54,7 +58,7 @@ export const GameOver = (({ fighter, guesses, openMenu}) => {
                                 <p className="Popup-stat-text Popup-right-height">{fighter.LastFight}</p>
                             </div>
                         </div>
-                    </div>
+                    </div> }
                 </div>
             </div>
     )

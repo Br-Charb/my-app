@@ -57,28 +57,53 @@
 }
 
 .Guess-prompt {
-  width: 750px;
+  width: 550px;
   height: 10px;
   border-radius: 20px;
-  font-size: 30px;
+  font-size: 25px;
   padding: 15px;
   border: 2px solid #ccc;  
-  margin-bottom: 10px;
+  margin-right: 20px;
+  /* margin-bottom: 2px; */
+}
+
+.Guess-prompt:FOCUS {
+  outline: none;
 }
 
 .Show-player {
-  width: 100%;
-  height: 30px;
-  /* border-radius: 20px; */
-  font-size: 30px;
+  width: 200px;
+  height: 44px;
+  border-radius: 20px;
   padding: 15px;
-  border: 2px solid #ccc;  
+  border: 2px solid #ccc; 
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.Show-player:HOVER {
+  background-color: #c62828;
+  color: white;
+  text-shadow:
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;
+}
+
+.Silhoutte {
+  filter: brightness(0%);
 }
 
 .Input-row {
   display: flex;
+  justify-content: center;
   width: 950px;
-  height: 100px;
 }
 
 .R1-heading {
@@ -236,10 +261,11 @@
   flex-direction: column;
   align-items: stretch;
   justify-content: flex-start;
-  font-size: 40px;
+  font-size: 30px;
   border-radius: 20px;
   overflow-y: scroll;
   text-align: center;
+  margin-right: 20px;
 
   max-height: 0px;
   overflow: hidden;
@@ -359,6 +385,7 @@
   width: 25%;
   margin-left: 10px;
   margin-right: 20px;
+  
 }
 
 .Popup-flag {
@@ -368,32 +395,25 @@
 
 .Popup-stat {
   display: inline-block;
-  flex-direction: column;
   width: 100%;
   height: 100%;
   color: black;
+  line-height: 1;
 }
 .Popup-stat-text {
   color: white;
   height: 70%;
   margin-top: 0px;
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
-  /* outline: 1px solid black; */
-
 }
 
 .Popup-right-height {
-  height: 55%;
+  height: 60%;
 }
 
 .Popup-stat-heading {
   height: 30%;
   font-size: 20px;
-  /* outline: 1px solid black; */
   bottom: 0;
-  /* align-self: flex-end; */
 }
 
 .Popup-stat-heading-right {
