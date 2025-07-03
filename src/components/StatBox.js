@@ -35,10 +35,16 @@ export const StatBox = (({text, value, correctValue, type}) => {
             {type !== "name" ?
                 ( 
                 <div className={`R2-response ${getStyle[type]} ${compareFighter(value, correctValue)}`}>
-                    {showArrow && !(arrowDirection) && <img className="Up-arrow" src="/images/general/UpArrow.png" />}
-                    {type !== "nationality" && <p>{text}</p>}
-                    {type === "nationality" && <p><img src={`/images/flags/${text.split(" ").join("")}.png`} className="Flag-image" alt={`${text} Flag`} /></p>}
-                    {showArrow && (arrowDirection) && <img className="Down-arrow" src="/images/general/DownArrow.png" />}
+                    <div className="Arrow-box">
+                        <img className={`Up-arrow ${(showArrow && !(arrowDirection)) ? "" : "Make-clear"}`} src="/images/general/UpArrow.png" />
+                    </div>
+                    <div className="Stat-box-text">
+                        {type !== "nationality" && <p>{text}</p>}
+                        {type === "nationality" && <p><img src={`/images/flags/${text.split(" ").join("")}.png`} className="Flag-image" alt={`${text} Flag`} /></p>}
+                    </div>
+                    <div className="Arrow-box">
+                        <img className={`Down-arrow ${(showArrow && (arrowDirection)) ? "" : "Make-clear"}`} src="/images/general/DownArrow.png" />
+                    </div>
                 </div>
                 )
                 :

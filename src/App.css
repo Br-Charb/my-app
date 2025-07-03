@@ -98,6 +98,11 @@
 
 .Silhoutte {
   filter: brightness(0%);
+  pointer-events: none;
+}
+
+.Make-clear {
+  visibility: hidden;
 }
 
 .Input-row {
@@ -107,7 +112,6 @@
 }
 
 .R1-heading {
-  width: 60px;
   justify-content: center;
   display: flex;
 }
@@ -132,7 +136,7 @@
 }
 
 .Response-body-rows {
-  height: 160px;
+  height: 180px;
   display: grid;
   gap: 10px;
   place-items: center;
@@ -147,39 +151,52 @@
 }
 
 .R2-response {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   align-items: center;
   justify-content: center;
   height: 100%;
-  font-size: 30px;
   border-radius: 20px;
   box-sizing: border-box;
   padding-left: 15px;
   padding-right: 15px;
+  text-align: center;
+  outline: 1px solid black;
+  
+}
+
+.Arrow-box {
+  height: 50px;
+}
+
+.Stat-box-text {
+  height: 80px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .Up-arrow {
   height: 30px;
   width: 100px;
   filter: invert();
-  margin-bottom: -15px;
+  margin-top: 20px;
 }
 
 .Down-arrow {
   height: 30px;
   width: 100px;
   filter: invert();
-  margin-top: -15px;
 }
 
 .Flag-image {
   height: 70px;
+  margin: 0px;
 }
 
 .Fighter-image {
   margin-top: 12px;
-  height: 110px;
+  height: 120px;
   margin-bottom: -25px;
 }
 
@@ -189,7 +206,7 @@
   outline: 3px solid black;
   background-color: grey;
   align-items: center;
-  height: 160px;
+  height: 180px;
   width: 1570px;
   justify-content: center;
   display: flex;
@@ -210,22 +227,23 @@
 }
 
 .Fighter-name-text {
-  font-size: 22px;
+  font-size: 25px;
   margin-bottom: -10px;
 }
 
 .Nationality-weight-box {
   width: 200px;
-  font-size: 25px;
+  font-size: 30px;
 }
 
 .Age-height-record-box {
   width: 150px;
+  font-size: 35px;
 }
 
 .Peakrank-box {
   width: 150px;
-  font-size: 25px;
+  font-size: 35px;
 }
 .Last-fight-box {
   width: 200px;
