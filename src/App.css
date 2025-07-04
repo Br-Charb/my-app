@@ -379,7 +379,6 @@
   border-radius: 20px;
   height: 100%;
   display: flex;
-  /* display: column; */
   justify-content: center;
   padding-top: 40px;
 }
@@ -437,5 +436,5 @@
 .Popup-stat-heading-right {
   height: 15%;
   font-size: 20px;
-  padding-top: 40px;
+  padding-top: 30px;
 }
