@@ -1,21 +1,24 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 
-export const GuessBar = (({ checkResponse, possibleFighters, disableinput }) => {
-
-    const [inputValue, setInputValue] = useState('');
-    const [fighter, setFighter] = useState(null);
-    const [isOpen, setIsOpen] = useState(false);
-    const [fightersGuessed, setFightersGuessed] = useState([]);
-
-    const returnFighterInfo = ((fighterName) => {
-        return possibleFighters.find(possibleFighters => possibleFighters.Fighter.toLowerCase() === fighterName.toLowerCase());
-    })
-
-    const checkNameSimilarity = ((text, fighter) => {
+const checkNameSimilarity = ((text, fighter, fightersGuessed) => {
         const firstName = (fighter.Fighter.toLowerCase()).startsWith(text);
         const lastName = (fighter.Fighter.toLowerCase()).split(" ").slice(-1)[0].startsWith(text);
         const emptySearch = text !== "";
         return (firstName || lastName) && emptySearch && !(fightersGuessed.includes(fighter));
+    })
+
+export const GuessBar = (({ checkResponse, possibleFighters, disableinput }) => {
+
+    const [inputValue, setInputValue] = useState('');
+    const [fightersGuessed, setFightersGuessed] = useState([]);
+    const [inputFocused, setInputFocused] = useState(false);
+    const [dropdownHeight, setDropdownHeight] = useState(0);
+
+    const guessOptionsRef = useRef(null);
+
+
+    const returnFighterInfo = ((fighterName) => {
+        return possibleFighters.find(possibleFighters => possibleFighters.Fighter.toLowerCase() === fighterName.toLowerCase());
     })
 
     const submitFighter = ((fighter) => {
@@ -24,6 +27,22 @@ export const GuessBar = (({ checkResponse, possibleFighters, disableinput }) => 
         checkResponse(fighter);
         setInputValue('');
     })
+
+    const fightersDisplayed = useMemo(() => 
+        Array.isArray(possibleFighters) 
+            ? possibleFighters.filter(item => 
+            checkNameSimilarity(inputValue.toLowerCase(), item, fightersGuessed)
+        )
+        : [], [inputValue, possibleFighters, fightersGuessed]);
+
+    const isOpen = inputFocused && fightersDisplayed.length > 0;
+
+    useEffect(() => {
+        if (guessOptionsRef.current) {
+            const targetHeight = isOpen ? Math.min((fightersDisplayed.length*50), 247) : 0;
+            setDropdownHeight(targetHeight);
+        }
+    }, [isOpen, fightersDisplayed]);
     
     return (
         <>
@@ -37,16 +56,16 @@ export const GuessBar = (({ checkResponse, possibleFighters, disableinput }) => 
                 (
                     <div>
                         <div>
-                            <input type="text"
+                            <input 
+                                type="text"
                                 className="Guess-prompt" 
                                 placeholder="Guess"
                                 value={inputValue}
 
-                                onFocus={() => setIsOpen(true)}
-                                onBlur={() => setTimeout(() => setIsOpen(false), 100)}
+                                onFocus={() => setInputFocused(true)}
+                                onBlur={() => setTimeout(() => setInputFocused(false), 100)}
 
                                 onChange={(e) => {
-                                    console.log(inputValue);
                                     setInputValue(e.target.value);
                                 }
                                 }
@@ -55,19 +74,24 @@ export const GuessBar = (({ checkResponse, possibleFighters, disableinput }) => 
                                         let fighter = returnFighterInfo(inputValue);
                                         if (fighter !== undefined) {
                                             submitFighter(fighter);
-                                            fighter = null;
                                         }
                                     }
                                 }}
                             />
                         </div>
-                        {<div className={`Guess-options ${isOpen ? "open" : "close"}`}>
-                            {Array.isArray(possibleFighters) &&
-                                possibleFighters.filter(item => checkNameSimilarity(inputValue.toLowerCase(), item)).map((item) => (
-                                <div className='Individual-guess' onClick={() => submitFighter(item)}>
-                                    {item.Fighter}
-                                </div>
-                            ))}
+                        {<div ref={guessOptionsRef} style={{
+                            height: `${dropdownHeight}px`,
+                            transition: `height 0.6s ease`,
+                            overflow: 'hidden',
+                            overflowY: 'auto'
+                        }}>
+                            <div className={`Guess-options`}>
+                                {fightersDisplayed.map((item) => (
+                                    <div className='Individual-guess' onClick={() => submitFighter(item)} key={item.Fighter}>
+                                        {item.Fighter}
+                                    </div>
+                                ))}
+                            </div>
                         </div>}
                     </div>
                 )
