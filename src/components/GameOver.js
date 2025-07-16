@@ -1,6 +1,6 @@
 import React, { UseEffect, useState } from "react";
 
-export const GameOver = (({ fighter, guesses, silhoutteViewable}) => {
+export const GameOver = (({ fighter, guesses, silhoutteViewable, openDiv}) => {
 
     const [open, setOpen] = useState(true);
 
@@ -13,7 +13,8 @@ export const GameOver = (({ fighter, guesses, silhoutteViewable}) => {
     })
 
     return (
-            <div className="Popup-box">
+        <div className={`Popup-transition ${openDiv ? 'open' : ''}`}>
+            <div className={`Popup-box`}>
                 <div className="Popup-image-div">
                     <img src={`/images/fighterImages/${fighter.Fighter.split(" ").join("")}.png`} className={`Popup-image ${silhoutteCheck(silhoutteViewable)}`} alt={fighter.Fighter} /> 
                 </div>
@@ -62,5 +63,6 @@ export const GameOver = (({ fighter, guesses, silhoutteViewable}) => {
                         </div> }
                 </div>
             </div>
+        </div>
     )
 })

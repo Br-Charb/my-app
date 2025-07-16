@@ -49,7 +49,7 @@ function App() {
         <button className='Show-player' onClick={() => setShowSilhoutte(!(showSilhoutte))}>Show Fighter</button>
       </div>
       <div>
-        {(showSilhoutte) && <GameOver fighter={todaysFighter} guesses={guessed} silhoutteViewable={gameComplete}/>}
+        {(todaysFighter !== null) && <GameOver fighter={todaysFighter} guesses={guessed} silhoutteViewable={gameComplete} openDiv={showSilhoutte}/>}
       </div>
       <div className="Response-rows-heading Headings">
         <p className="R1-heading">Name</p>

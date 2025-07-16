@@ -322,6 +322,21 @@
     1px 1px 0 black;
 }
 
+.Popup-transition {
+  /* margin-top: 0px; */
+  transform-origin: top;
+  transform: scaleY(0);
+  transition: transform 0.6s ease, max-height 0.6s ease;
+  max-height: 0px;
+}
+
+.Popup-transition.open {
+  transform: scaleY(1);
+  max-height: 400px;
+  height: 396px;
+  
+}
+
 .Popup-box {
   margin-top: 40px;
   height: 400px;
@@ -331,9 +346,13 @@
   align-items: stretch;
   font-size: 30px;
   font-family: 'PersonaAura', sans-serif;
+  
+  overflow: hidden;
+  padding: 3px;
 }
 
 .Popup-image-div {
+  /* margin-top: 40px; */
   background: #d28888;
   border-radius: 20px;
   margin-right: 20px;
@@ -342,7 +361,6 @@
 
 .Popup-image {
   height: 100%;
-  /* filter: brightness(0%); */
 }
 
 .Popup-info-boxes {
@@ -352,6 +370,7 @@
 }
 
 .Popup-name {
+  /* margin-top: 40px; */
   background: #d28888;
   outline: 3px solid black;
   border-radius: 20px;
