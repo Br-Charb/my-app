@@ -289,16 +289,9 @@
   overflow-y: auto;
 }
 
-.Guess-options.close {
-  max-height: 0px;
-}
 
-.Guess-options.open {
-  max-height: 247px;
-  overflow-y: auto;
-}
 
-.Guess-options::-webkit-scrollbar {
+.No-scrollbar::-webkit-scrollbar {
   display: none;
 }
 

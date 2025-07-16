@@ -79,13 +79,13 @@ export const GuessBar = (({ checkResponse, possibleFighters, disableinput }) => 
                                 }}
                             />
                         </div>
-                        {<div ref={guessOptionsRef} style={{
+                        {<div ref={guessOptionsRef} className="No-scrollbar" style={{
                             height: `${dropdownHeight}px`,
                             transition: `height 0.6s ease`,
                             overflow: 'hidden',
-                            overflowY: 'auto'
+                            overflowY: 'auto',
                         }}>
-                            <div className={`Guess-options`}>
+                            <div className={`Guess-options No-scrollbar`}>
                                 {fightersDisplayed.map((item) => (
                                     <div className='Individual-guess' onClick={() => submitFighter(item)} key={item.Fighter}>
                                         {item.Fighter}
