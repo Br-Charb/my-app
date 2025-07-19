@@ -5,13 +5,14 @@ import { Fighter } from './components/Fighter';
 import { UnattemptedGuess } from './components/UnattemptedGuess';
 import { GuessBar } from './components/GuessBar';
 import { GameOver } from './components/GameOver';
+import { GuessSlot } from './components/GuessSlot';
 
 function App() {
 
   const [guessed, setGuessed] = useState(0);
   const [todaysFighter, setTodaysFighter] = useState(null);
   const [allFighters, setAllFighters] = useState(null);
-  const [fightersGuessed, setFightersGuessed] = useState([]);
+  const [fightersGuessed, setFightersGuessed] = useState([null, null, null, null, null, null, null, null]);
   const [gameComplete, setGameComplete] = useState(false);
   const [showSilhoutte, setShowSilhoutte] = useState(false);
 
@@ -27,7 +28,9 @@ function App() {
   }, [])
 
   const updateGuessedFighters = ((fighter) => {
-    setFightersGuessed([...fightersGuessed, fighter]);
+    let tempFighters = fightersGuessed;
+    tempFighters[guessed] = fighter;
+    setFightersGuessed(tempFighters);
     setGuessed(guessed+1);
     console.log(todaysFighter);
     checkGameOver(fighter);
@@ -65,47 +68,11 @@ function App() {
         <hr className='Divider-line'/>
       </div>
       <div className='Guess-rows'>
-      {guessed <= 0 ? 
-          (<UnattemptedGuess guessNum='1'/> )
-          :
-          (<Fighter fighter={fightersGuessed[0]} todaysFighter={todaysFighter} />)
-      }
-      {guessed <= 1 ? 
-          (<UnattemptedGuess guessNum='2'/> )
-          :
-          (<Fighter fighter={fightersGuessed[1]} todaysFighter={todaysFighter} />)
-      }
-      {guessed <= 2 ? 
-          (<UnattemptedGuess guessNum='3'/> )
-          :
-          (<Fighter fighter={fightersGuessed[2]} todaysFighter={todaysFighter} />)
-      }
-      {guessed <= 3 ? 
-          (<UnattemptedGuess guessNum='4'/> )
-          :
-          (<Fighter fighter={fightersGuessed[3]} todaysFighter={todaysFighter} />)
-      }
-      {guessed <= 4 ? 
-          (<UnattemptedGuess guessNum='5'/> )
-          :
-          (<Fighter fighter={fightersGuessed[4]} todaysFighter={todaysFighter} />)
-      }
-      {guessed <= 5 ? 
-          (<UnattemptedGuess guessNum='6'/> )
-          :
-          (<Fighter fighter={fightersGuessed[5]} todaysFighter={todaysFighter} />)
-      }
-      {guessed <= 6 ? 
-          (<UnattemptedGuess guessNum='7'/> )
-          :
-          (<Fighter fighter={fightersGuessed[6]} todaysFighter={todaysFighter} />)
-      }
-      {guessed <= 7 ? 
-          (<UnattemptedGuess guessNum='8'/> )
-          :
-          (<Fighter fighter={fightersGuessed[7]} todaysFighter={todaysFighter} />)
-      }
+        {[...Array(8).keys()].map((num) => (
+          <GuessSlot key={num} fighterSelected={fightersGuessed[num]} todaysFighter={todaysFighter} guessNumber={num+1} currGuessNumber={guessed}/>
+        ))}
       </div>
+
     </div>
   );
 }
