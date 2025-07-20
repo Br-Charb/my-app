@@ -8,24 +8,22 @@
   align-items: center;
   justify-content: flex-start;
   color: white;
-  padding-bottom: 50px;
+  /* padding-bottom: 20px; */
 }
 
-.App-logo {
+.Octadle-logo {
   height: 300px;
 }
 
-.App-logo-left {
+.Octadle-logo-left {
   margin-right: 20px;
 }
 
-.App-logo-right {
+.Octadle-logo-right {
   margin-left: 20px;
 }
 
-.App-link {
-  color: #61dafb;
-}
+
 
 @font-face {
   font-family: 'DirtyBrush';
@@ -458,4 +456,38 @@
   height: 15%;
   font-size: 20px;
   padding-top: 30px;
+}
+
+.Project-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: rgb(242, 242, 242);
+  font-family: 'PersonaAura', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.Footer-icons {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.Company-logo {
+  height: 30px;
+}
+
+.Company-logo:Hover {
+  opacity: 0.6;
+}
+
+.Footer-link:HOVER {
+  color: rgb(212, 212, 212);
 }

@@ -72,7 +72,21 @@ function App() {
           <GuessSlot key={num} fighterSelected={fightersGuessed[num]} todaysFighter={todaysFighter} guessNumber={num+1} currGuessNumber={guessed}/>
         ))}
       </div>
-
+      <footer className="Project-footer"> 
+        Built by Br-Charb
+        <div className="Footer-icons">
+          <div>
+            <a href="https://github.com/Br-Charb" target="_blank">
+              <img src="/images/general/GithubLogo.png" className="Company-logo" alt="Github Logo" />
+            </a>
+          </div>
+          <div>
+            <a href="https://www.linkedin.com/in/ben-charb/" target="_blank">
+              <img src="/images/general/Linkedinlogo.svg" className="Company-logo" alt="Linkedin Logo" />
+            </a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
