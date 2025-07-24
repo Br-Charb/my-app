@@ -1,14 +1,12 @@
 .App {
   text-align: center;
   background: linear-gradient(25deg, #8d9492 0%, #c62828 100%);
-  /* background-color: #c62828; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   color: white;
-  /* padding-bottom: 20px; */
 }
 
 .Octadle-logo {
@@ -43,7 +41,7 @@
   font-family: 'DirtyBrush', sans-serif;
   font-size: 200px;
   font-weight: normal;
-  margin-top: 50px;
+  margin-top: 80px;
 }
 
 .Title-row {
@@ -55,14 +53,12 @@
 }
 
 .Guess-prompt {
-  width: 550px;
+  width: 500px;
   height: 10px;
   border-radius: 20px;
   font-size: 25px;
   padding: 15px;
   border: 2px solid #ccc;  
-  margin-right: 20px;
-  /* margin-bottom: 2px; */
 }
 
 .Guess-prompt:FOCUS {
@@ -72,8 +68,24 @@
 .Show-player {
   width: 200px;
   height: 44px;
+  margin-left: 20px;
   border-radius: 20px;
   padding: 15px;
+  border: 2px solid #ccc; 
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.Timer {
+  width: 200px;
+  height: 40px;
+  border-radius: 20px;
+  margin-right: 20px;
   border: 2px solid #ccc; 
   font-size: 25px;
   display: flex;
@@ -106,7 +118,8 @@
 .Input-row {
   display: flex;
   justify-content: center;
-  width: 950px;
+  width: 1000px;
+  margin-top: 20px;
 }
 
 .R1-heading {
@@ -130,7 +143,7 @@
   font-family: 'PersonaAura', sans-serif;
   font-size: 30px;
   height: 80px;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .Response-body-rows {
@@ -280,8 +293,9 @@
   font-size: 30px;
   border-radius: 20px;
   text-align: center;
-  margin-right: 20px;
   max-height: 247px;
+
+  width: 100%;
 
   overflow: hidden;
   overflow-y: auto;
@@ -336,7 +350,7 @@
 }
 
 .Popup-box {
-  margin-top: 40px;
+  margin-top: 30px;
   height: 400px;
   width: 1600px;
   color: black;
@@ -350,7 +364,6 @@
 }
 
 .Popup-image-div {
-  /* margin-top: 40px; */
   background: #d28888;
   border-radius: 20px;
   margin-right: 20px;
@@ -368,7 +381,6 @@
 }
 
 .Popup-name {
-  /* margin-top: 40px; */
   background: #d28888;
   outline: 3px solid black;
   border-radius: 20px;

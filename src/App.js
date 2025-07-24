@@ -6,6 +6,7 @@ import { UnattemptedGuess } from './components/UnattemptedGuess';
 import { GuessBar } from './components/GuessBar';
 import { GameOver } from './components/GameOver';
 import { GuessSlot } from './components/GuessSlot';
+import { Timer } from './components/Timer';
 
 function App() {
 
@@ -48,6 +49,7 @@ function App() {
     <div className="App">
       <Title />
       <div className='Input-row'>
+        <Timer PauseTime={gameComplete}/>
         <GuessBar checkResponse={updateGuessedFighters} possibleFighters={allFighters} disableinput={gameComplete} />
         <button className='Show-player' onClick={() => setShowSilhoutte(!(showSilhoutte))}>Show Fighter</button>
       </div>
