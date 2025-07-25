@@ -45,7 +45,7 @@ export const Fighter = ({ fighter, todaysFighter }) => {
 
     const translateRank = ((rank) => {
       if (rank.toLowerCase() === "champ") return 17
-      else if (rank.toLowerCase() == "interim champ") return 16
+      else if (rank.toLowerCase() == "ic") return 16
       else if (rank.toLowerCase() === "unranked") return 0
       else return 16-Number(rank.slice(1));
     });
