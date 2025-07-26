@@ -1,8 +1,6 @@
-import React, { UseEffect, useState } from "react";
+import React from "react";
 
-export const GameOver = (({ fighter, guesses, silhoutteViewable, openDiv}) => {
-
-    const [open, setOpen] = useState(true);
+export const GameOver = (({ fighter, silhoutteViewable, openDiv, guesses, winner}) => {
 
     const silhoutteCheck = ((silhoutteViewable) => {
         return silhoutteViewable ? "" : "Silhoutte";
@@ -30,28 +28,13 @@ export const GameOver = (({ fighter, guesses, silhoutteViewable, openDiv}) => {
                                     <div className="Popup-stat">
                                         <div className="Popup-stat-heading">Nationality</div>                                    <div><img src={`/images/flags/${fighter.Nationality.split(" ").join("")}.png`} className="Popup-flag" alt={`${fighter.Nationality} Flag`} /></div>
                                     </div>
-                                    <div className="Popup-stat">
-                                        <div className="Popup-stat-heading">Age</div>
-                                        <p className="Popup-stat-text">{Math.floor((Date.now() - (new Date(fighter.Age)))/31622400000)}</p>
-                                    </div>
-                                    <div className="Popup-stat">
-                                        <div className="Popup-stat-heading">Weight</div>
-                                        <div className="Popup-stat-text">{fighter.Weight}</div>
-                                    </div>
+                                    <PopupStat title={"Age"} stat={Math.floor((Date.now() - (new Date(fighter.Age)))/31622400000)}/>
+                                    <PopupStat title={"Weight"} stat={fighter.Weight}/>
                                 </div>
                                 <div className="Popup-stat-stack">
-                                    <div className="Popup-stat">
-                                        <div className="Popup-stat-heading">Peak Rank</div>
-                                        <p className="Popup-stat-text">{fighter.PeakRank}</p>
-                                    </div>
-                                    <div className="Popup-stat">
-                                        <div className="Popup-stat-heading">Height</div>
-                                        <p className="Popup-stat-text">{fighter.Height}"</p>
-                                    </div>
-                                    <div className="Popup-stat">
-                                        <div className="Popup-stat-heading">Wins</div>
-                                        <p className="Popup-stat-text">{fighter.Record.split("-")[0]}</p>
-                                    </div>
+                                    <PopupStat title={"Peak Rank"} stat={fighter.PeakRank}/>
+                                    <PopupStat title={"Height"} stat={fighter.Height + '"'}/>
+                                    <PopupStat title={"Wins"} stat={fighter.Record.split("-")[0]}/>
                                 </div>
                             </div>
                             <div className="Popup-stat-right">
@@ -60,9 +43,24 @@ export const GameOver = (({ fighter, guesses, silhoutteViewable, openDiv}) => {
                                     <p className="Popup-stat-text Popup-right-height">{fighter.LastFight}</p>
                                 </div>
                             </div>
-                        </div> }
+                        </div>
+                    }
                 </div>
             </div>
+            {silhoutteViewable &&
+                <div className="Popup-bottom">
+                    <div className="Popup-bottom-text">Streak: {"blank"}</div>
+                    <div className="Popup-bottom-text">Game <u>{winner ? "Won" : "Lost"}</u></div>
+                    <div className="Popup-bottom-text">Guesses: {guesses}</div>
+                </div>
+            }
         </div>
     )
 })
+
+const PopupStat = ({title, stat}) => (
+    <div className="Popup-stat">
+        <div className="Popup-stat-heading">{title}</div>
+        <p className="Popup-stat-text">{stat}</p>
+    </div>
+)

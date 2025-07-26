@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import { Title } from './components/Title';
-import { Fighter } from './components/Fighter';
-import { UnattemptedGuess } from './components/UnattemptedGuess';
 import { GuessBar } from './components/GuessBar';
 import { GameOver } from './components/GameOver';
 import { GuessSlot } from './components/GuessSlot';
@@ -16,6 +14,7 @@ function App() {
   const [fightersGuessed, setFightersGuessed] = useState([null, null, null, null, null, null, null, null]);
   const [gameComplete, setGameComplete] = useState(false);
   const [showSilhoutte, setShowSilhoutte] = useState(false);
+  const [gameWon, setGameWon] = useState(false);
 
   useEffect (() => {
     fetch('/data/FighterInfo.json')
@@ -28,8 +27,8 @@ function App() {
     })
   }, [])
 
-  const updateGuessedFighters = ((fighter) => {
-    let tempFighters = fightersGuessed;
+  const updateGuessedFighters = (fighter => {
+    let tempFighters = [...fightersGuessed];
     tempFighters[guessed] = fighter;
     setFightersGuessed(tempFighters);
     setGuessed(guessed+1);
@@ -37,8 +36,9 @@ function App() {
     checkGameOver(fighter);
   })
 
-  const checkGameOver = ((currFighter) => {
-    if (currFighter === todaysFighter || guessed === 7) {
+  const checkGameOver = (currFighter => {
+    if (currFighter === todaysFighter || (guessed + 1) === 8) {
+      if (currFighter === todaysFighter) setGameWon(true);
       setGameComplete(true);
       setShowSilhoutte(true);
     }
@@ -54,7 +54,7 @@ function App() {
         <button className='Show-player' onClick={() => setShowSilhoutte(!(showSilhoutte))}>Show Fighter</button>
       </div>
       <div>
-        {(todaysFighter !== null) && <GameOver fighter={todaysFighter} guesses={guessed} silhoutteViewable={gameComplete} openDiv={showSilhoutte}/>}
+        {(todaysFighter !== null) && <GameOver fighter={todaysFighter} guesses={guessed} silhoutteViewable={gameComplete} openDiv={showSilhoutte} winner={gameWon} /> }
       </div>
       <div className="Response-rows-heading Headings">
         <p className="R1-heading">Name</p>
@@ -78,12 +78,12 @@ function App() {
         Built by Br-Charb
         <div className="Footer-icons">
           <div>
-            <a href="https://github.com/Br-Charb" target="_blank">
+            <a href="https://github.com/Br-Charb" target="_blank" rel="noreferrer">
               <img src="/images/general/GithubLogo.png" className="Company-logo" alt="Github Logo" />
             </a>
           </div>
           <div>
-            <a href="https://www.linkedin.com/in/ben-charb/" target="_blank">
+            <a href="https://www.linkedin.com/in/ben-charb/" target="_blank" rel="noreferrer">
               <img src="/images/general/Linkedinlogo.svg" className="Company-logo" alt="Linkedin Logo" />
             </a>
           </div>

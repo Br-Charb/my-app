@@ -22,13 +22,11 @@ export const Fighter = ({ fighter, todaysFighter }) => {
       Height: correctHeight, 
       Record: correctRecord, 
       PeakRank: correctRank, 
-      LastFight: correctLastFight,
       LastFightDate: correctLastFightDate
     } = todaysFighter;
 
     const weightClassToNumber = {
       "straw weight": 1,
-      "fly weight": 2,
       "fly weight": 2,
       "bantam weight": 3,
       "feather weight": 4,
@@ -45,7 +43,7 @@ export const Fighter = ({ fighter, todaysFighter }) => {
 
     const translateRank = ((rank) => {
       if (rank.toLowerCase() === "champ") return 17
-      else if (rank.toLowerCase() == "ic") return 16
+      else if (rank.toLowerCase() === "ic") return 16
       else if (rank.toLowerCase() === "unranked") return 0
       else return 16-Number(rank.slice(1));
     });
@@ -63,7 +61,7 @@ export const Fighter = ({ fighter, todaysFighter }) => {
 
           <StatBox text={ageInYears(age)} value={ageInYears(age)} correctValue={ageInYears(correctAge)} type={"age"} />
 
-          <StatBox text={`${height}\"`} value={translateHeight(height)} correctValue={translateHeight(correctHeight)} type={"height"} />
+          <StatBox text={`${height}"`} value={translateHeight(height)} correctValue={translateHeight(correctHeight)} type={"height"} />
 
           <StatBox text={translateWins(record)} value={translateWins(record)} correctValue={translateWins(correctRecord)} type={"wins"} />
 

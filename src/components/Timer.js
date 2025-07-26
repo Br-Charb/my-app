@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 
 export const Timer = ( {PauseTime} ) => {
-    const [gameOver, setGameOver] = useState(false);
     const [time, setTime] = useState(0);
     const intervalRef = useRef(null);
 
